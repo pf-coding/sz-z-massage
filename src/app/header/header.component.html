@@ -49,19 +49,40 @@
             aria-labelledby="navbarDropdown"
           >
             <li>
-              <a class="dropdown-item" (click)="changeLanguage('hu')">{{
-                translationService.getTranslation("language_hu")
-              }}</a>
+              <a
+                class="dropdown-item d-flex justify-content-between align-items-center"
+                (click)="changeLanguage('hu')"
+                >{{ translationService.getTranslation("language_hu")
+                }}<img
+                  width="20px"
+                  height="20px"
+                  border="none"
+                  src="https://www.svgrepo.com/show/401630/flag-for-hungary.svg"
+              /></a>
             </li>
             <li>
-              <a class="dropdown-item" (click)="changeLanguage('en')">{{
-                translationService.getTranslation("language_eng")
-              }}</a>
+              <a
+                class="dropdown-item d-flex justify-content-between align-items-center"
+                (click)="changeLanguage('en')"
+                >{{ translationService.getTranslation("language_eng")
+                }}<img
+                  width="20px"
+                  height="20px"
+                  border="none"
+                  src="https://www.svgrepo.com/show/401788/flag-for-united-kingdom.svg"
+              /></a>
             </li>
             <li>
-              <a class="dropdown-item" (click)="changeLanguage('de')">{{
-                translationService.getTranslation("language_de")
-              }}</a>
+              <a
+                class="dropdown-item d-flex justify-content-between align-items-center"
+                (click)="changeLanguage('de')"
+                >{{ translationService.getTranslation("language_de")
+                }}<img
+                  width="20px"
+                  height="20px"
+                  border="none"
+                  src="https://www.svgrepo.com/show/401612/flag-for-germany.svg"
+              /></a>
             </li>
           </ul>
         </li>
