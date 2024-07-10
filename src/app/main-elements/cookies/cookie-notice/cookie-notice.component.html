@@ -10,15 +10,15 @@
     <button (click)="acceptCookies()">
       {{ translationService.getTranslation("cookie_notice_acceptbutton") }}
     </button>
-    <div class="pb-3">
-      <button (click)="rejectCookies()">
-        {{ translationService.getTranslation("cookie_notice_rejectbutton") }}
-      </button>
-    </div>
-    <div class="pb-3">
-      <app-cookie-customization-modal
-        (click)="setCookies()"
-      ></app-cookie-customization-modal>
-    </div>
+  </div>
+  <div class="pb-3">
+    <button (click)="rejectCookies()">
+      {{ translationService.getTranslation("cookie_notice_rejectbutton") }}
+    </button>
+  </div>
+  <div class="pb-3">
+    <app-cookie-customization-modal
+      (click)="setCookies()"
+    ></app-cookie-customization-modal>
   </div>
 </div>
