@@ -6,13 +6,14 @@
     }}</a
     >.
   </p>
-  <button (click)="acceptCookies()">
+  <button class="pb-3" (click)="acceptCookies()">
     {{ translationService.getTranslation("cookie_notice_acceptbutton") }}
   </button>
-  <button (click)="rejectCookies()">
+  <button class="pb-3" (click)="rejectCookies()">
     {{ translationService.getTranslation("cookie_notice_rejectbutton") }}
   </button>
   <app-cookie-customization-modal
     (click)="setCookies()"
+    class="pb-3"
   ></app-cookie-customization-modal>
 </div>
