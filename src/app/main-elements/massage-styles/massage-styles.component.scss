@@ -1,0 +1,96 @@
+@mixin hover-color($base-color) {
+  color: darken($base-color, 10%);
+  &:hover {
+    color: lighten($base-color, 10%);
+  }
+}
+
+@mixin hover-filter($base-filter) {
+  filter: brightness($base-filter);
+  &:hover {
+    filter: brightness($base-filter + 0.2);
+  }
+}
+
+$primary-color: #aa4d00;
+$secondary-color: #f8f9fa;
+
+.btn {
+  background-color: $primary-color;
+  color: $secondary-color;
+}
+
+.services-cards {
+  background-color: $secondary-color;
+
+  .card {
+    opacity: 0; // Kezdetben nem látható
+
+    transition: opacity 0.3s ease-in-out; // Áttűnési effektus beállítása
+
+    @keyframes showCard {
+      to {
+        opacity: 1; // A 0.3 másodperc elteltével az elem megjelenik
+      }
+    }
+
+    animation: showCard 0.3s 0.3s forwards; // Animáció alkalmazása
+
+    &:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    }
+
+    .card-body {
+      transition: color 0.3s ease-in-out;
+      @include hover-color(
+        $primary-color
+      ); // Alapértelmezett szín és hover hatás
+
+      img {
+        transition: filter 0.3s ease-in-out;
+        @include hover-filter(1); // Alapértelmezett fényerő és hover hatás
+      }
+
+      h3 {
+        transition: color 0.3s ease-in-out;
+        @include hover-color(
+          $primary-color
+        ); // Alapértelmezett szín és hover hatás
+      }
+
+      p {
+        transition: color 0.3s ease-in-out;
+        &:hover {
+          color: #333333;
+        }
+      }
+
+      a {
+        transition: color 0.3s ease-in-out;
+        @include hover-color(
+          $primary-color
+        ); // Alapértelmezett szín és hover hatás
+
+        svg {
+          transition: transform 0.3s ease-in-out;
+          &:hover {
+            transform: translateX(5px);
+          }
+        }
+      }
+    }
+  }
+
+  .custom-card {
+    border: 2px solid #6c757d; /* Szürke színű, vastagabb keret */
+    border-radius: 10px; /* Lekerekített sarkok */
+  }
+
+  .custom-link {
+    color: #6c757d; /* Szürke színű link */
+    &:hover {
+      color: #5a6268; /* Sötétebb szürke hover esetén */
+    }
+  }
+}

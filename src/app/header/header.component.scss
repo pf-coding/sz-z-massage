@@ -1,0 +1,17 @@
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000; /* Biztosítsd, hogy a navbar mindig felül legyen */
+  background: linear-gradient(to bottom, rgba(170, 77, 0, 1) 0%, rgba(170, 77, 0, 0.5) 99%, rgba(170, 77, 0, 0) 100%);
+  /* A szín és áttetszőség a linear-gradient segítségével */
+  transition: background 0.5s ease; /* Átmenet a háttérszín változásra */
+}
+
+@media screen and (min-width: 992px) {
+  .nav-item {
+    line-height: 80px;
+    font-size: larger;
+  }
+}

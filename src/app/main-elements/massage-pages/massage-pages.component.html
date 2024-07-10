@@ -1,0 +1,43 @@
+<section *ngIf="selectedMassagePage" class="massage-page">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-6">
+        <img
+          [src]="selectedMassagePage.imgSrcArticle"
+          class="img-fluid mb-4 article-image"
+          [alt]="selectedMassagePage.title + ' Image'"
+        />
+      </div>
+      <div class="col-lg-6">
+        <h2 class="h1 article-title">{{ selectedMassagePage.title }}</h2>
+        <p class="lead article-description">
+          {{ selectedMassagePage.descriptionLong }}
+        </p>
+        <div class="btn-group mb-4">
+          <button
+            class="btn"
+            [ngClass]="{ selected: selectedDuration === '30min' }"
+            (click)="updatePrice('30min')"
+          >
+            {{ selectedMassagePage.title30min }}
+          </button>
+          <button
+            class="btn"
+            [ngClass]="{ selected: selectedDuration === '1hr' }"
+            (click)="updatePrice('1hr')"
+          >
+            {{ selectedMassagePage.title1hr }}
+          </button>
+          <button
+            class="btn"
+            [ngClass]="{ selected: selectedDuration === '1.5hr' }"
+            (click)="updatePrice('1.5hr')"
+          >
+            {{ selectedMassagePage.title15hr }}
+          </button>
+        </div>
+        <h2 class="h1 article-title">{{ selectedPrice }}</h2>
+      </div>
+    </div>
+  </div>
+</section>

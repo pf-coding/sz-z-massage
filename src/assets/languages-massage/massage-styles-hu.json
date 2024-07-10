@@ -1,0 +1,80 @@
+[
+  {
+    "imgSrcNarrow": "https://images.pexels.com/photos/3230236/pexels-photo-3230236.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+    "imgSrcArticle": "https://florida-academy.edu/wp-content/uploads/2019/08/fa-massage-featured-image-2-1500x1000.jpg",
+    "title": "Svéd Masszázs",
+    "descriptionShort": "Svéd masszázs szolgáltatásunk pihentető élményt nyújt, amely az izomfeszültség enyhítésére és az általános felfrissülésre összpontosít.",
+    "descriptionLong": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed quis augue auctor, varius tellus et, fringilla mauris. Fusce ultrices metus vitae felis luctus, at malesuada orci lacinia. Proin commodo, justo et iaculis fermentum, libero dui condimentum arcu, sit amet finibus augue odio ac elit.",
+    "price30min": "16,500 Ft",
+    "price1hr": "25,500 Ft",
+    "price15hr": "34,500 Ft",
+    "title30min": "30 Perc",
+    "title1hr": "1 óra",
+    "title15hr": "1,5 óra"
+  },
+  {
+    "imgSrcNarrow": "https://images.pexels.com/photos/3230236/pexels-photo-3230236.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+    "imgSrcArticle": "https://florida-academy.edu/wp-content/uploads/2019/08/fa-massage-featured-image-2-1500x1000.jpg",
+    "title": "Thai Masszázs",
+    "descriptionShort": "Tapasztalja meg a thai masszázs terápiás előnyeit, amely akupresszúrát, energia munkát és segített jóga pózokat ötvöz. Ideális a rugalmasság és az energiaáramlás javítására.",
+    "descriptionLong": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed quis augue auctor, varius tellus et, fringilla mauris. Fusce ultrices metus vitae felis luctus, at malesuada orci lacinia. Proin commodo, justo et iaculis fermentum, libero dui condimentum arcu, sit amet finibus augue odio ac elit.",
+    "price30min": "18,500 Ft",
+    "price1hr": "27,500 Ft",
+    "price15hr": "37,000 Ft",
+    "title30min": "30 Perc",
+    "title1hr": "1 óra",
+    "title15hr": "1,5 óra"
+  },
+  {
+    "imgSrcNarrow": "https://images.pexels.com/photos/3230236/pexels-photo-3230236.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+    "imgSrcArticle": "https://florida-academy.edu/wp-content/uploads/2019/08/fa-massage-featured-image-2-1500x1000.jpg",
+    "title": "Spa Masszázs",
+    "descriptionShort": "Kényeztesse magát spa masszázs kezeléseinkkel, amelyek célja, hogy kényeztessék és revitalizálják testét és elméjét. Kényeztesse magát egy luxus spa élménnyel.",
+    "descriptionLong": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed quis augue auctor, varius tellus et, fringilla mauris. Fusce ultrices metus vitae felis luctus, at malesuada orci lacinia. Proin commodo, justo et iaculis fermentum, libero dui condimentum arcu, sit amet finibus augue odio ac elit.",
+    "price30min": "20,000 Ft",
+    "price1hr": "29,500 Ft",
+    "price15hr": "38,500 Ft",
+    "title30min": "30 Perc",
+    "title1hr": "1 óra",
+    "title15hr": "1,5 óra"
+  },
+  {
+    "imgSrcNarrow": "https://images.pexels.com/photos/3230236/pexels-photo-3230236.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+    "imgSrcArticle": "https://florida-academy.edu/wp-content/uploads/2019/08/fa-massage-featured-image-2-1500x1000.jpg",
+    "title": "Aromaterápiás Masszázs",
+    "descriptionShort": "Aromaterápiás masszázsunk illóolajok használatával segít a teljes ellazulásban és a test energetizálásában.",
+    "descriptionLong": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed quis augue auctor, varius tellus et, fringilla mauris. Fusce ultrices metus vitae felis luctus, at malesuada orci lacinia. Proin commodo, justo et iaculis fermentum, libero dui condimentum arcu, sit amet finibus augue odio ac elit.",
+    "price30min": "18,500 Ft",
+    "price1hr": "27,500 Ft",
+    "price15hr": "37,000 Ft",
+    "title30min": "30 Perc",
+    "title1hr": "1 óra",
+    "title15hr": "1,5 óra"
+  },
+  {
+    "imgSrcNarrow": "https://images.pexels.com/photos/3230236/pexels-photo-3230236.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+    "imgSrcArticle": "https://florida-academy.edu/wp-content/uploads/2019/08/fa-massage-featured-image-2-1500x1000.jpg",
+    "title": "Sportmasszázs",
+    "descriptionShort": "Sportmasszázsunk segít az izmok gyors regenerálódásában és a teljesítmény növelésében, különösen intenzív edzések után.",
+    "descriptionLong": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed quis augue auctor, varius tellus et, fringilla mauris. Fusce ultrices metus vitae felis luctus, at malesuada orci lacinia. Proin commodo, justo et iaculis fermentum, libero dui condimentum arcu, sit amet finibus augue odio ac elit.",
+    "price30min": "20,000 Ft",
+    "price1hr": "29,500 Ft",
+    "price15hr": "38,500 Ft",
+    "title30min": "30 Perc",
+    "title1hr": "1 óra",
+    "title15hr": "1,5 óra"
+  },
+  {
+    "imgSrcNarrow": "https://images.pexels.com/photos/3230236/pexels-photo-3230236.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+    "imgSrcArticle": "https://florida-academy.edu/wp-content/uploads/2019/08/fa-massage-featured-image-2-1500x1000.jpg",
+    "title": "Lávaköves Masszázs",
+    "descriptionShort": "A lávaköves masszázs meleg kövek használatával mély relaxációt és izomlazítást biztosít.",
+    "descriptionLong": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed quis augue auctor, varius tellus et, fringilla mauris. Fusce ultrices metus vitae felis luctus, at malesuada orci lacinia. Proin commodo, justo et iaculis fermentum, libero dui condimentum arcu, sit amet finibus augue odio ac elit.",
+    "price30min": "22,000 Ft",
+    "price1hr": "31,500 Ft",
+    "price15hr": "41,000 Ft",
+    "title30min": "30 Perc",
+    "title1hr": "1 óra",
+    "title15hr": "1,5 óra"
+  }
+]

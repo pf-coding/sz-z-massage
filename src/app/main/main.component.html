@@ -1,0 +1,103 @@
+<section class="bsb-service-6 py-5 py-xl-8">
+  <div class="container">
+    <div class="row gy-4 gy-md-0 gx-xxl-5 services-cards">
+      <!-- Lokáció kártya -->
+      <div class="col-12 col-md-4">
+        <div class="card bg-transparent mb-4 visibli">
+          <div class="card-body">
+            <h2 class="card-title text-center pb-5">
+              {{ translationService.getTranslation("location_title") }}
+            </h2>
+            <div class="text-center">
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2655.729646255093!2d16.460206891596314!3d48.26957706786264!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x476d040f4a0b9891%3A0x6c3906f0e4d8d94f!2sPercostra%C3%9Fe%2C%201220%20Wien%2C%20Ausztria!5e0!3m2!1shu!2shu!4v1720605473860!5m2!1shu!2shu"
+                height="450"
+                style="border: 0"
+                allowfullscreen=""
+                loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"
+              ></iframe>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Elérhetőségek kártya -->
+      <div class="col-12 col-md-8">
+        <div class="card bg-transparent mb-4 visibli">
+          <div class="card-body">
+            <h2 class="card-title text-center pb-5">
+              {{
+                translationService.getTranslation("contact_information_title")
+              }}
+            </h2>
+            <div
+              class="d-flex flex-column flex-md-row justify-content-between align-items-center"
+            >
+              <div class="border fadein">
+                <img
+                  src="https://s3.ivisa.com/website-assets/blog/id-photo2.jpg"
+                  class="img-fluid rounded"
+                  alt="Picture of myself"
+                />
+              </div>
+              <ul class="list-unstyled stylish-list mb-4 mb-md-0">
+                <li>
+                  <strong>{{
+                    translationService.getTranslation(
+                      "contact_information_name"
+                    )
+                  }}</strong>
+                  Zoltán Szabó
+                </li>
+                <li>
+                  <strong>{{
+                    translationService.getTranslation(
+                      "contact_information_phone"
+                    )
+                  }}</strong>
+                  +1234567890
+                </li>
+                <li>
+                  <strong>{{
+                    translationService.getTranslation(
+                      "contact_information_address"
+                    )
+                  }}</strong>
+                  Viena
+                </li>
+                <li>
+                  <strong>Facebook:</strong>
+                  <a href="#">facebook.com/johndoe</a>
+                </li>
+                <li>
+                  <strong>Google Review:</strong>
+                  <a href="#">Link to Google Reviews</a>
+                </li>
+                <li>
+                  <strong>LinkedIn:</strong>
+                  <a href="#">linkedin.com/in/johndoe</a>
+                </li>
+                <li>
+                  <script
+                    id="setmore_script"
+                    type="text/javascript"
+                    src="https://storage.googleapis.com/fullintegration-live/webComponentAppListing/Container/setmoreIframeLive.js"
+                  ></script>
+                  <a
+                    style="float: none"
+                    id="Setmore_button_iframe"
+                    href="https://booking.setmore.com/scheduleappointment/45878100-5b6b-45ad-b8b5-7c1891a47069"
+                    ><img
+                      border="none"
+                      src="https://assets.setmore.com/setmore/images/2.0/Settings/book-now-black.svg"
+                      alt="Book an appointment with Péter Farkas using Setmore"
+                  /></a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

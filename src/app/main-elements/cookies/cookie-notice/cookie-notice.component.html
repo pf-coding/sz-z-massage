@@ -1,0 +1,18 @@
+<div class="cookie-notice" *ngIf="visible">
+  <p>
+    {{ translationService.getTranslation("cookie_notice_text") }}
+    <a href="https://developers.google.com/learn/cookies" target="_blank">{{
+      translationService.getTranslation("cookie_notice_learnmore")
+    }}</a
+    >.
+  </p>
+  <button (click)="acceptCookies()">
+    {{ translationService.getTranslation("cookie_notice_acceptbutton") }}
+  </button>
+  <button (click)="rejectCookies()">
+    {{ translationService.getTranslation("cookie_notice_rejectbutton") }}
+  </button>
+  <app-cookie-customization-modal
+    (click)="setCookies()"
+  ></app-cookie-customization-modal>
+</div>

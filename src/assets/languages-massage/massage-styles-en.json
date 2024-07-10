@@ -1,0 +1,80 @@
+[
+  {
+    "imgSrcNarrow": "https://images.pexels.com/photos/3230236/pexels-photo-3230236.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+    "imgSrcArticle": "https://florida-academy.edu/wp-content/uploads/2019/08/fa-massage-featured-image-2-1500x1000.jpg",
+    "title": "Swedish Massage",
+    "descriptionShort": "Our Swedish massage service offers a relaxing experience focusing on muscle tension relief and overall rejuvenation.",
+    "descriptionLong": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed quis augue auctor, varius tellus et, fringilla mauris. Fusce ultrices metus vitae felis luctus, at malesuada orci lacinia. Proin commodo, justo et iaculis fermentum, libero dui condimentum arcu, sit amet finibus augue odio ac elit.",
+    "price30min": "45 EUR",
+    "price1hr": "70 EUR",
+    "price15hr": "95 EUR",
+    "title30min": "30 Minutes",
+    "title1hr": "1 Hour",
+    "title15hr": "1,5 Hours"
+  },
+  {
+    "imgSrcNarrow": "https://images.pexels.com/photos/3230236/pexels-photo-3230236.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+    "imgSrcArticle": "https://florida-academy.edu/wp-content/uploads/2019/08/fa-massage-featured-image-2-1500x1000.jpg",
+    "title": "Thai Massage",
+    "descriptionShort": "Experience the therapeutic benefits of Thai massage, combining acupressure, energy work, and assisted yoga poses. Ideal for improving flexibility and energy flow.",
+    "descriptionLong": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed quis augue auctor, varius tellus et, fringilla mauris. Fusce ultrices metus vitae felis luctus, at malesuada orci lacinia. Proin commodo, justo et iaculis fermentum, libero dui condimentum arcu, sit amet finibus augue odio ac elit.",
+    "price30min": "50 EUR",
+    "price1hr": "75 EUR",
+    "price15hr": "100 EUR",
+    "title30min": "30 Minutes",
+    "title1hr": "1 Hour",
+    "title15hr": "1,5 Hours"
+  },
+  {
+    "imgSrcNarrow": "https://images.pexels.com/photos/3230236/pexels-photo-3230236.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+    "imgSrcArticle": "https://florida-academy.edu/wp-content/uploads/2019/08/fa-massage-featured-image-2-1500x1000.jpg",
+    "title": "Spa Massage",
+    "descriptionShort": "Indulge in our spa massage treatments designed to pamper and revitalize your body and mind. Treat yourself to a luxurious spa experience.",
+    "descriptionLong": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed quis augue auctor, varius tellus et, fringilla mauris. Fusce ultrices metus vitae felis luctus, at malesuada orci lacinia. Proin commodo, justo et iaculis fermentum, libero dui condimentum arcu, sit amet finibus augue odio ac elit.",
+    "price30min": "55 EUR",
+    "price1hr": "80 EUR",
+    "price15hr": "105 EUR",
+    "title30min": "30 Minutes",
+    "title1hr": "1 Hour",
+    "title15hr": "1,5 Hours"
+  },
+  {
+    "imgSrcNarrow": "https://images.pexels.com/photos/3230236/pexels-photo-3230236.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+    "imgSrcArticle": "https://florida-academy.edu/wp-content/uploads/2019/08/fa-massage-featured-image-2-1500x1000.jpg",
+    "title": "Aromatherapy Massage",
+    "descriptionShort": "Our aromatherapy massage uses essential oils to help you fully relax and energize your body.",
+    "descriptionLong": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed quis augue auctor, varius tellus et, fringilla mauris. Fusce ultrices metus vitae felis luctus, at malesuada orci lacinia. Proin commodo, justo et iaculis fermentum, libero dui condimentum arcu, sit amet finibus augue odio ac elit.",
+    "price30min": "50 EUR",
+    "price1hr": "75 EUR",
+    "price15hr": "100 EUR",
+    "title30min": "30 Minutes",
+    "title1hr": "1 Hour",
+    "title15hr": "1,5 Hours"
+  },
+  {
+    "imgSrcNarrow": "https://images.pexels.com/photos/3230236/pexels-photo-3230236.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+    "imgSrcArticle": "https://florida-academy.edu/wp-content/uploads/2019/08/fa-massage-featured-image-2-1500x1000.jpg",
+    "title": "Sports Massage",
+    "descriptionShort": "Our sports massage helps with muscle recovery and performance enhancement, especially after intense workouts.",
+    "descriptionLong": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed quis augue auctor, varius tellus et, fringilla mauris. Fusce ultrices metus vitae felis luctus, at malesuada orci lacinia. Proin commodo, justo et iaculis fermentum, libero dui condimentum arcu, sit amet finibus augue odio ac elit.",
+    "price30min": "55 EUR",
+    "price1hr": "80 EUR",
+    "price15hr": "105 EUR",
+    "title30min": "30 Minutes",
+    "title1hr": "1 Hour",
+    "title15hr": "1,5 Hours"
+  },
+  {
+    "imgSrcNarrow": "https://images.pexels.com/photos/3230236/pexels-photo-3230236.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+    "imgSrcArticle": "https://florida-academy.edu/wp-content/uploads/2019/08/fa-massage-featured-image-2-1500x1000.jpg",
+    "title": "Hot Stone Massage",
+    "descriptionShort": "The hot stone massage provides deep relaxation and muscle relief using heated stones.",
+    "descriptionLong": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed quis augue auctor, varius tellus et, fringilla mauris. Fusce ultrices metus vitae felis luctus, at malesuada orci lacinia. Proin commodo, justo et iaculis fermentum, libero dui condimentum arcu, sit amet finibus augue odio ac elit.",
+    "price30min": "60 EUR",
+    "price1hr": "85 EUR",
+    "price15hr": "110 EUR",
+    "title30min": "30 Minutes",
+    "title1hr": "1 Hour",
+    "title15hr": "1,5 Hours"
+  }
+]

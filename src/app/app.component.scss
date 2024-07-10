@@ -1,0 +1,59 @@
+@import url("https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap");
+
+$primary-color: #aa4d00;
+$secondary-color: #f8f9fa;
+* {
+  font-family: "Outfit", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 500;
+  font-style: normal;
+}
+
+.custom-btn {
+  background-color: $primary-color;
+  color: $secondary-color;
+  border: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: background-color 0.3s;
+
+  &:hover {
+    background-color: darken($primary-color, 10%);
+  }
+
+  &:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba($primary-color, 0.5);
+  }
+}
+
+.d-flex {
+  display: flex;
+}
+
+.justify-content-center {
+  justify-content: center;
+}
+
+.mb-4 {
+  margin-bottom: 1.5rem;
+}
+
+app-massage-styles {
+  transition: opacity 1s ease-in; /* Áttűnési effektus beállítása */
+  transition: opacity 0.5s ease-out; /* Áttűnési effektus beállítása */
+  opacity: 1; /* Alapértelmezett látható állapot */
+}
+
+/* Az ng-container fade in effektje */
+ng-container {
+  transition: opacity 0.5s ease-in; /* Áttűnési effektus beállítása */
+  opacity: 0; /* Kezdetben átlátszó állapot */
+}
+
+/* Ha az ng-container visible osztállyal rendelkezik (fade in), akkor láthatóvá válik */
+ng-container.visible {
+  opacity: 1; /* Látható állapot */
+}

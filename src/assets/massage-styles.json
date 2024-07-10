@@ -1,0 +1,44 @@
+[
+    {
+        "imgSrcNarrow": "https://images.pexels.com/photos/3230236/pexels-photo-3230236.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+        "imgSrcArticle": "https://florida-academy.edu/wp-content/uploads/2019/08/fa-massage-featured-image-2-1500x1000.jpg",
+        "title": "Swedish Massage",
+        "descriptionShort": "Our Swedish massage service offers a relaxing experience focusing on muscle tension relief and overall rejuvenation.",
+        "descriptionLong": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed quis augue auctor, varius tellus et, fringilla mauris. Fusce ultrices metus vitae felis luctus, at malesuada orci lacinia. Proin commodo, justo et iaculis fermentum, libero dui condimentum arcu, sit amet finibus augue odio ac elit."
+    },
+    {
+        "imgSrcNarrow": "https://images.pexels.com/photos/3230236/pexels-photo-3230236.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+        "imgSrcArticle": "https://florida-academy.edu/wp-content/uploads/2019/08/fa-massage-featured-image-2-1500x1000.jpg",
+        "title": "Thai Massage",
+        "descriptionShort": "Experience the therapeutic benefits of Thai massage, combining acupressure, energy work, and assisted yoga postures. Ideal for flexibility and energy flow.",
+        "descriptionLong": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed quis augue auctor, varius tellus et, fringilla mauris. Fusce ultrices metus vitae felis luctus, at malesuada orci lacinia. Proin commodo, justo et iaculis fermentum, libero dui condimentum arcu, sit amet finibus augue odio ac elit."
+    },
+    {
+        "imgSrcNarrow": "https://images.pexels.com/photos/3230236/pexels-photo-3230236.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+        "imgSrcArticle": "https://florida-academy.edu/wp-content/uploads/2019/08/fa-massage-featured-image-2-1500x1000.jpg",
+        "title": "Spa Massage",
+        "descriptionShort": "Indulge in our spa massage treatments, designed to pamper and revitalize your body and mind. Treat yourself to a luxurious spa experience.",
+        "descriptionLong": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed quis augue auctor, varius tellus et, fringilla mauris. Fusce ultrices metus vitae felis luctus, at malesuada orci lacinia. Proin commodo, justo et iaculis fermentum, libero dui condimentum arcu, sit amet finibus augue odio ac elit."
+    },
+    {
+        "imgSrcNarrow": "https://images.pexels.com/photos/3230236/pexels-photo-3230236.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+        "imgSrcArticle": "https://florida-academy.edu/wp-content/uploads/2019/08/fa-massage-featured-image-2-1500x1000.jpg",
+        "title": "New Massage Type 1",
+        "descriptionShort": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed quis augue auctor, varius tellus et, fringilla mauris.",
+        "descriptionLong": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed quis augue auctor, varius tellus et, fringilla mauris. Fusce ultrices metus vitae felis luctus, at malesuada orci lacinia. Proin commodo, justo et iaculis fermentum, libero dui condimentum arcu, sit amet finibus augue odio ac elit."
+    },
+    {
+        "imgSrcNarrow": "https://images.pexels.com/photos/3230236/pexels-photo-3230236.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+        "imgSrcArticle": "https://florida-academy.edu/wp-content/uploads/2019/08/fa-massage-featured-image-2-1500x1000.jpg",
+        "title": "New Massage Type 2",
+        "descriptionShort": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed quis augue auctor, varius tellus et, fringilla mauris.",
+        "descriptionLong": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed quis augue auctor, varius tellus et, fringilla mauris. Fusce ultrices metus vitae felis luctus, at malesuada orci lacinia. Proin commodo, justo et iaculis fermentum, libero dui condimentum arcu, sit amet finibus augue odio ac elit."
+    },
+    {
+        "imgSrcNarrow": "https://images.pexels.com/photos/3230236/pexels-photo-3230236.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+        "imgSrcArticle": "https://florida-academy.edu/wp-content/uploads/2019/08/fa-massage-featured-image-2-1500x1000.jpg",
+        "title": "New Massage Type 3",
+        "descriptionShort": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed quis augue auctor, varius tellus et, fringilla mauris.",
+        "descriptionLong": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed quis augue auctor, varius tellus et, fringilla mauris. Fusce ultrices metus vitae felis luctus, at malesuada orci lacinia. Proin commodo, justo et iaculis fermentum, libero dui condimentum arcu, sit amet finibus augue odio ac elit."
+    }
+]

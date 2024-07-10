@@ -1,0 +1,71 @@
+<nav class="navbar navbar-expand-lg navbar-dark" id="headerNav">
+  <div class="container-fluid">
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#navbarNavDropdown"
+      aria-controls="navbarNavDropdown"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavDropdown">
+      <ul class="navbar-nav mx-auto">
+        <li class="nav-item">
+          <a class="nav-link mx-2" href="#rolam">{{
+            translationService.getTranslation("about_me")
+          }}</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link mx-2" href="#masszazs-tipusok">{{
+            translationService.getTranslation("massage_styles")
+          }}</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link mx-2" href="#main">{{
+            translationService.getTranslation("location")
+          }}</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link mx-2" href="#main">{{
+            translationService.getTranslation("contact")
+          }}</a>
+        </li>
+        <li class="nav-item dropdown">
+          <a
+            class="nav-link dropdown-toggle"
+            data-bs-toggle="collapse"
+            id="navbarDropdown"
+            role="button"
+            data-bs-toggle="dropdown"
+            aria-expanded="false"
+          >
+            {{ translationService.getTranslation("language") }}
+          </a>
+          <ul
+            class="dropdown-menu language-switcher"
+            aria-labelledby="navbarDropdown"
+          >
+            <li>
+              <a class="dropdown-item" (click)="changeLanguage('hu')">{{
+                translationService.getTranslation("language_hu")
+              }}</a>
+            </li>
+            <li>
+              <a class="dropdown-item" (click)="changeLanguage('en')">{{
+                translationService.getTranslation("language_eng")
+              }}</a>
+            </li>
+            <li>
+              <a class="dropdown-item" (click)="changeLanguage('de')">{{
+                translationService.getTranslation("language_de")
+              }}</a>
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
