@@ -15,9 +15,10 @@
         {{ translationService.getTranslation("cookie_notice_rejectbutton") }}
       </button>
     </div>
-    <div class="pb-3"></div>
-    <app-cookie-customization-modal
-      (click)="setCookies()"
-    ></app-cookie-customization-modal>
+    <div class="pb-3">
+      <app-cookie-customization-modal
+        (click)="setCookies()"
+      ></app-cookie-customization-modal>
+    </div>
   </div>
 </div>
