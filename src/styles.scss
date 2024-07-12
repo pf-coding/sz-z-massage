@@ -1,4 +1,21 @@
-body {
-    padding-top: 160px; /* A padding értéke legyen akkora, mint a navbar magassága */
+@mixin hover-color($base-color) {
+  color: darken($base-color, 10%);
+  &:hover {
+    color: lighten($base-color, 10%);
   }
-  
+}
+
+@mixin hover-filter($base-filter) {
+  filter: brightness($base-filter);
+  &:hover {
+    filter: brightness($base-filter + 0.2);
+  }
+}
+
+$primary-color: #3e4f3c;
+$secondary-color: #ecaa93;
+$tertiary-color: wheat;
+
+body {
+  padding-top: 80px; /* A padding értéke legyen akkora, mint a navbar magassága */
+}

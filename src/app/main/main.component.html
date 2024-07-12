@@ -1,103 +1,83 @@
-<section class="bsb-service-6 py-5 py-xl-8">
-  <div class="container">
-    <div class="row gy-4 gy-md-0 gx-xxl-5 services-cards">
-      <!-- Lokáció kártya -->
-      <div class="col-12 col-md-4">
-        <div class="card bg-transparent mb-4 visibli">
-          <div class="card-body">
-            <h2 class="card-title text-center pb-5">
-              {{ translationService.getTranslation("location_title") }}
-            </h2>
-            <div class="text-center">
-              <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2655.729646255093!2d16.460206891596314!3d48.26957706786264!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x476d040f4a0b9891%3A0x6c3906f0e4d8d94f!2sPercostra%C3%9Fe%2C%201220%20Wien%2C%20Ausztria!5e0!3m2!1shu!2shu!4v1720605473860!5m2!1shu!2shu"
-                height="450"
-                style="border: 0"
-                allowfullscreen=""
-                loading="lazy"
-                referrerpolicy="no-referrer-when-downgrade"
-              ></iframe>
+<div class="container">
+  <div class="row">
+    <div class="col-12 col-md-6">
+      <div class="display">
+        <div class="display-item">
+          <div class="card zoltan">
+            <div class="card-top"></div>
+            <div class="card-profile">
+              <div class="profile-image"></div>
+            </div>
+            <div class="card-info">
+              <div class="info-title">
+                <h2>Szabó Zoltán</h2>
+                <h3>Professional Massager</h3>
+              </div>
+              <div class="info-follow">
+                <div class="follow-followers">
+                  <span>100+</span><br />
+                  <span>Good review</span>
+                </div>
+                <div class="follow-following">
+                  <span>3+</span><br />
+                  <span>Location</span>
+                </div>
+                <div class="follow-likes">
+                  <span>2+</span><br />
+                  <span>Country</span>
+                </div>
+              </div>
+              <div class="info-bio">
+                Proin non rhoncus sapien. Cras tempus odio elit, eget hendrerit
+                neque sollicitudin at. Suspendisse feugiat nunc quis venenatis
+                volutpat. Cras finibus sit amet velit vel dignissim. Curabitur
+                vehicula porttitor leo a tincidunt.
+              </div>
+              <div class="info-social">
+                <div class="social-icons">
+                  <div class="sm email">
+                    <fa-icon [icon]="faMailBulk"></fa-icon>
+                  </div>
+                  <div class="sm facebook">
+                    <fa-icon [icon]="faFacebookF"></fa-icon>
+                  </div>
+                  <div class="sm phone">
+                    <fa-icon [icon]="faPhone"></fa-icon>
+                  </div>
+                  <div class="sm px500">
+                    <fa-icon [icon]="faInstagram"></fa-icon>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
       </div>
-      <!-- Elérhetőségek kártya -->
-      <div class="col-12 col-md-8">
-        <div class="card bg-transparent mb-4 visibli">
-          <div class="card-body">
-            <h2 class="card-title text-center pb-5">
-              {{
-                translationService.getTranslation("contact_information_title")
-              }}
-            </h2>
-            <div
-              class="d-flex flex-column flex-md-row justify-content-between align-items-center"
-            >
-              <div class="">
-                <img
-                  src="https://s3.ivisa.com/website-assets/blog/id-photo2.jpg"
-                  class="img-fluid rounded"
-                  alt="Picture of myself"
-                />
+    </div>
+    <div class="col-12 col-md-6">
+      <div class="display">
+        <div class="display-item">
+          <div class="card location">
+            <div class="card-top"></div>
+            <div class="card-profile">
+              <div class="card-info">
+                <div class="pt-2" style="width: 100%">
+                  <iframe
+                    width="100%"
+                    height="450"
+                    frameborder="0"
+                    scrolling="no"
+                    marginheight="0"
+                    marginwidth="0"
+                    src="https://maps.google.com/maps?width=100%25&amp;height=600&amp;hl=en&amp;q=Wien+(RelaxZ)&amp;t=p&amp;z=12&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"
+                    ><a href="https://www.gps.ie/">gps devices</a></iframe
+                  >
+                </div>
               </div>
-              <ul class="list-unstyled stylish-list mb-4 mb-md-0">
-                <li>
-                  <strong>{{
-                    translationService.getTranslation(
-                      "contact_information_name"
-                    )
-                  }}</strong>
-                  Zoltán Szabó
-                </li>
-                <li>
-                  <strong>{{
-                    translationService.getTranslation(
-                      "contact_information_phone"
-                    )
-                  }}</strong>
-                  <a href="tel:123-456-7890">+1234567890</a>
-                </li>
-                <li>
-                  <strong>{{
-                    translationService.getTranslation(
-                      "contact_information_address"
-                    )
-                  }}</strong>
-                  Viena
-                </li>
-                <li>
-                  <strong>Facebook:</strong>
-                  <a href="#">facebook.com/johndoe</a>
-                </li>
-                <li>
-                  <strong>Google Review:</strong>
-                  <a href="#">Link to Google Reviews</a>
-                </li>
-                <li>
-                  <strong>LinkedIn:</strong>
-                  <a href="#">linkedin.com/in/johndoe</a>
-                </li>
-                <li>
-                  <script
-                    id="setmore_script"
-                    type="text/javascript"
-                    src="https://storage.googleapis.com/fullintegration-live/webComponentAppListing/Container/setmoreIframeLive.js"
-                  ></script>
-                  <a
-                    style="float: none"
-                    target="_blank"
-                    href="https://booking.setmore.com/scheduleappointment/e23a8bff-18d2-41ef-8817-500cdac23109"
-                    ><img
-                      border="none"
-                      src="https://assets.setmore.com/setmore/images/2.0/Settings/book-now-black.svg"
-                      alt="Click here to book the appointment using setmore"
-                  /></a>
-                </li>
-              </ul>
             </div>
           </div>
         </div>
       </div>
     </div>
   </div>
-</section>
+</div>
