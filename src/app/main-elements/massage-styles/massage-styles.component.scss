@@ -11,6 +11,9 @@
     filter: brightness($base-filter + 0.2);
   }
 }
+* {
+  justify-content: center;
+}
 
 $primary-color: #aa4d00;
 $secondary-color: #f8f9fa;
@@ -23,9 +26,14 @@ $secondary-color: #f8f9fa;
 .services-cards {
   background-color: $secondary-color;
 
+  .row {
+    justify-content: center; // Középre igazítja a tartalmat vízszintesen
+  }
+
   .card {
     opacity: 0; // Kezdetben nem látható
 
+    height: 100%; // Egységes magasság
     transition: opacity 0.3s ease-in-out; // Áttűnési effektus beállítása
 
     @keyframes showCard {
@@ -42,10 +50,11 @@ $secondary-color: #f8f9fa;
     }
 
     .card-body {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
       transition: color 0.3s ease-in-out;
-      @include hover-color(
-        $primary-color
-      ); // Alapértelmezett szín és hover hatás
+      @include hover-color($primary-color);
 
       img {
         transition: filter 0.3s ease-in-out;
@@ -54,9 +63,7 @@ $secondary-color: #f8f9fa;
 
       h3 {
         transition: color 0.3s ease-in-out;
-        @include hover-color(
-          $primary-color
-        ); // Alapértelmezett szín és hover hatás
+        @include hover-color($primary-color);
       }
 
       p {
@@ -68,9 +75,7 @@ $secondary-color: #f8f9fa;
 
       a {
         transition: color 0.3s ease-in-out;
-        @include hover-color(
-          $primary-color
-        ); // Alapértelmezett szín és hover hatás
+        @include hover-color($primary-color);
 
         svg {
           transition: transform 0.3s ease-in-out;
