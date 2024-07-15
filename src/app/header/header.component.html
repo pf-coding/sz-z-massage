@@ -14,29 +14,31 @@
     <div class="collapse navbar-collapse" id="navbarNavDropdown">
       <ul class="navbar-nav mx-auto">
         <li class="nav-item">
-          <a class="nav-link mx-2" href="#rolam">{{
+          <a class="nav-link mx-2" href="#rolam" (click)="closeMenu()">{{
             translationService.getTranslation("about_me")
           }}</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link mx-2" href="#masszazs-tipusok">{{
-            translationService.getTranslation("massage_styles")
-          }}</a>
+          <a
+            class="nav-link mx-2"
+            href="#masszazs-tipusok"
+            (click)="closeMenu()"
+            >{{ translationService.getTranslation("massage_styles") }}</a
+          >
         </li>
         <li class="nav-item">
-          <a class="nav-link mx-2" href="#main">{{
+          <a class="nav-link mx-2" href="#main" (click)="closeMenu()">{{
             translationService.getTranslation("location")
           }}</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link mx-2" href="#main">{{
+          <a class="nav-link mx-2" href="#main" (click)="closeMenu()">{{
             translationService.getTranslation("contact")
           }}</a>
         </li>
         <li class="nav-item dropdown">
           <a
             class="nav-link dropdown-toggle"
-            data-bs-toggle="collapse"
             id="navbarDropdown"
             role="button"
             data-bs-toggle="dropdown"

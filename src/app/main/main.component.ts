@@ -22,4 +22,8 @@ export class MainComponent implements FontAwesomeModule {
   changeLanguage(lang: string): void {
     this.translationService.setLang(lang);
   }
+
+  openInNewTab(url: string): void {
+    window.open(url, '_blank');
+  }
 }

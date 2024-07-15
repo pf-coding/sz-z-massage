@@ -10,41 +10,80 @@
             </div>
             <div class="card-info">
               <div class="info-title">
-                <h2>Szabó Zoltán</h2>
-                <h3>Professional Massager</h3>
+                <h2>
+                  {{
+                    translationService.getTranslation(
+                      "contact_information_name"
+                    )
+                  }}
+                </h2>
+                <h3>
+                  {{
+                    translationService.getTranslation(
+                      "contact_information_title"
+                    )
+                  }}
+                </h3>
               </div>
               <div class="info-follow">
                 <div class="follow-followers">
                   <span>100+</span><br />
-                  <span>Good review</span>
+                  <span>{{
+                    translationService.getTranslation(
+                      "contact_information_review"
+                    )
+                  }}</span>
                 </div>
                 <div class="follow-following">
                   <span>3+</span><br />
-                  <span>Location</span>
+                  <span>{{
+                    translationService.getTranslation(
+                      "contact_information_location"
+                    )
+                  }}</span>
                 </div>
                 <div class="follow-likes">
                   <span>2+</span><br />
-                  <span>Country</span>
+                  <span>{{
+                    translationService.getTranslation(
+                      "contact_information_country"
+                    )
+                  }}</span>
                 </div>
               </div>
               <div class="info-bio">
-                Proin non rhoncus sapien. Cras tempus odio elit, eget hendrerit
-                neque sollicitudin at. Suspendisse feugiat nunc quis venenatis
-                volutpat. Cras finibus sit amet velit vel dignissim. Curabitur
-                vehicula porttitor leo a tincidunt.
+                {{
+                  translationService.getTranslation("contact_information_text")
+                }}
               </div>
               <div class="info-social">
                 <div class="social-icons">
-                  <div class="sm email">
+                  <div
+                    class="sm email"
+                    (click)="openInNewTab('mailto:zoltan.massages@example.com')"
+                  >
                     <fa-icon [icon]="faMailBulk"></fa-icon>
                   </div>
-                  <div class="sm facebook">
+                  <div
+                    class="sm facebook"
+                    (click)="
+                      openInNewTab('https://www.facebook.com/your-profile')
+                    "
+                  >
                     <fa-icon [icon]="faFacebookF"></fa-icon>
                   </div>
-                  <div class="sm phone">
+                  <div
+                    class="sm phone"
+                    (click)="openInNewTab('tel:+4366475578959')"
+                  >
                     <fa-icon [icon]="faPhone"></fa-icon>
                   </div>
-                  <div class="sm px500">
+                  <div
+                    class="sm px500"
+                    (click)="
+                      openInNewTab('https://www.instagram.com/your-profile')
+                    "
+                  >
                     <fa-icon [icon]="faInstagram"></fa-icon>
                   </div>
                 </div>
