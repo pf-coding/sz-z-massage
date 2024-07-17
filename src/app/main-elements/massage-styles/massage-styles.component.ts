@@ -1,4 +1,4 @@
-import { Component, OnInit, OnDestroy } from '@angular/core';
+import { Component, OnInit, OnDestroy, Renderer2 } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Router } from '@angular/router';
 import { MassageCard } from '../../models/massage-card.model';
@@ -17,10 +17,14 @@ export class MassageStylesComponent implements OnInit, OnDestroy {
   isAnimating: boolean = false;
   langSubscription!: Subscription;
 
+  private touchStartX = 0;
+  private touchEndX = 0;
+
   constructor(
     private http: HttpClient,
     private router: Router,
-    public translationService: TranslationService
+    public translationService: TranslationService,
+    private renderer: Renderer2
   ) {}
 
   ngOnInit(): void {
@@ -38,6 +42,12 @@ export class MassageStylesComponent implements OnInit, OnDestroy {
 
     // Initial fetch
     this.fetchMassageCards(this.translationService.getLang());
+
+    // Touch event listeners
+    this.renderer.listen('window', 'touchstart', (event) =>
+      this.touchStart(event)
+    );
+    this.renderer.listen('window', 'touchend', (event) => this.touchEnd(event));
   }
 
   ngOnDestroy(): void {
@@ -111,5 +121,23 @@ export class MassageStylesComponent implements OnInit, OnDestroy {
     this.router.navigate(['/massage-pages', pageName], {
       queryParams: { lang },
     });
+  }
+
+  // Touch event handlers
+  touchStart(event: TouchEvent): void {
+    this.touchStartX = event.changedTouches[0].screenX;
+  }
+
+  touchEnd(event: TouchEvent): void {
+    this.touchEndX = event.changedTouches[0].screenX;
+    this.handleGesture();
+  }
+
+  handleGesture(): void {
+    if (this.touchEndX < this.touchStartX) {
+      this.next();
+    } else if (this.touchEndX > this.touchStartX) {
+      this.prev();
+    }
   }
 }
