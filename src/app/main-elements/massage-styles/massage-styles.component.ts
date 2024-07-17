@@ -19,6 +19,8 @@ export class MassageStylesComponent implements OnInit, OnDestroy {
 
   private touchStartX = 0;
   private touchEndX = 0;
+  private touchStartY = 0;
+  private touchEndY = 0;
 
   constructor(
     private http: HttpClient,
@@ -126,18 +128,25 @@ export class MassageStylesComponent implements OnInit, OnDestroy {
   // Touch event handlers
   touchStart(event: TouchEvent): void {
     this.touchStartX = event.changedTouches[0].screenX;
+    this.touchStartY = event.changedTouches[0].screenY;
   }
 
   touchEnd(event: TouchEvent): void {
     this.touchEndX = event.changedTouches[0].screenX;
+    this.touchEndY = event.changedTouches[0].screenY;
     this.handleGesture();
   }
 
   handleGesture(): void {
-    if (this.touchEndX < this.touchStartX) {
-      this.next();
-    } else if (this.touchEndX > this.touchStartX) {
-      this.prev();
+    const deltaX = this.touchEndX - this.touchStartX;
+    const deltaY = this.touchEndY - this.touchStartY;
+    if (Math.abs(deltaX) > Math.abs(deltaY)) {
+      // Only consider horizontal swipes
+      if (deltaX < 0) {
+        this.next();
+      } else if (deltaX > 0) {
+        this.prev();
+      }
     }
   }
 }
