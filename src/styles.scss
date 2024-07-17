@@ -12,10 +12,20 @@
   }
 }
 
+// @font-face {
+//   font-family: "Audrey";
+//   src: url("assets\Fonts\Audrey 1.0\Audrey-Normal.woff2") format("woff2");
+//   font-optical-sizing: auto;
+//   font-weight: 500;
+//   font-style: normal;
+// }
+
+@import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap");
+
 $primary-color: #3e4f3c;
 $secondary-color: #ecaa93;
 $tertiary-color: wheat;
 
-body {
-  padding-top: 80px; /* A padding értéke legyen akkora, mint a navbar magassága */
+* {
+  font-family: "Quicksand"; /* Globális használat beállítása */
 }

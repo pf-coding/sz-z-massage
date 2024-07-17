@@ -15,6 +15,7 @@ import { CookieNoticeComponent } from './main-elements/cookies/cookie-notice/coo
 import { CookieCustomizationModalComponent } from './main-elements/cookies/cookie-customization-modal/cookie-customization-modal.component';
 import { FormsModule } from '@angular/forms';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { BorderDecorComponent } from './main-elements/border-decor/border-decor.component';
 
 @NgModule({
   declarations: [
@@ -28,6 +29,7 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
     MassagePagesComponent,
     CookieNoticeComponent,
     CookieCustomizationModalComponent,
+    BorderDecorComponent,
   ],
   imports: [
     BrowserModule,

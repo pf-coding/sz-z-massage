@@ -1,0 +1,55 @@
+.left-decor,
+.right-decor {
+  position: fixed;
+  top: -12px;
+  width: 500px;
+  height: 500px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  z-index: 1000;
+  transform-origin: center center; /* Módosítás: Forgatás középpontja a kép középpontja */
+}
+
+.left-decor {
+  left: -6px;
+  background-image: url("/assets/palm-left.png");
+  animation: sway-left 3s infinite ease-in-out;
+}
+
+.right-decor {
+  right: -6px;
+  background-image: url("/assets/palm-right.png");
+  animation: sway-right 4s infinite ease-in-out;
+}
+
+@keyframes sway-left {
+  0% {
+    transform: rotate(0deg);
+  }
+  50% {
+    transform: rotate(-2deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
+
+@keyframes sway-right {
+  0% {
+    transform: rotate(0deg);
+  }
+  50% {
+    transform: rotate(2deg); /* Módosítás: forgatás irányának megváltoztatása */
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
+
+@media (max-width: 600px) {
+  .left-decor,
+  .right-decor {
+    width: 200px;
+    height: 200px;
+  }
+}

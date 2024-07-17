@@ -5,14 +5,21 @@
   top: 0;
   left: 0;
   right: 0;
-  z-index: 1000; /* Biztosítsd, hogy a navbar mindig felül legyen */
+  z-index: 1000;
   background: $primary-color;
-  transition: background 0.5s ease; /* Átmenet a háttérszín változásra */
 }
 
-@media screen and (min-width: 992px) {
-  .nav-item {
-    line-height: 60px;
-    font-size: larger;
+@media screen and (max-width: 991.98px) {
+  .navbar-toggler {
+    top: 10px; /* Gombok eltolása a felső margón belül */
+  }
+
+  .navbar-collapse {
+    position: absolute;
+    top: 100%; /* Menü elhelyezése a gomb alatt */
+    left: 0;
+    right: 0;
+    background-color: $primary-color; /* Menü háttérszínének beállítása */
+    text-align: center; /* Tartalmak középre igazítása */
   }
 }
