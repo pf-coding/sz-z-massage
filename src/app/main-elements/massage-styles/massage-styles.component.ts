@@ -80,7 +80,7 @@ export class MassageStylesComponent implements OnInit, OnDestroy {
       setTimeout(() => {
         this.currentIndex -= this.cardsPerPage;
         this.fadeInCards();
-        this.isAnimating = false;
+        this.isAnimating = false; // Animáció befejeződött
       }, 500);
     }
   }
@@ -95,7 +95,7 @@ export class MassageStylesComponent implements OnInit, OnDestroy {
       setTimeout(() => {
         this.currentIndex += this.cardsPerPage;
         this.fadeInCards();
-        this.isAnimating = false;
+        this.isAnimating = false; // Animáció befejeződött
       }, 500);
     }
   }
