@@ -8,8 +8,8 @@
   "save_button": "Mentés",
   "hide": "Elrejtés",
   "show": "Megjelenítés",
-  "back": "Vissza",
-  "forward": "Előre",
+  "back": "Előző",
+  "forward": "Következő",
   "language": "Nyelv",
   "language_hu": "Magyar",
   "language_eng": "Angol",
@@ -40,5 +40,12 @@
   "cookie_customization_statistics_cookies_title": "Statisztikai sütik",
   "cookie_customization_statistics_cookies_text": "Névtelenül gyűjt adatokat, hogy segítsen megérteni, hogyan interaktálnak a látogatók a weboldallal. Ez az információ segít javítani weboldalunk teljesítményét és szerkezetét.",
   "cookie_customization_marketing_cookies_title": "Marketing sütik",
-  "cookie_customization_marketing_cookies_text": "Lehetővé teszi a weboldal számára, hogy személyre szabott marketing tartalmat szállítson az Ön viselkedése és érdeklődése alapján. Ezek a sütik nyomon követhetik látogatásait és lehetővé tehetik tartalmak megosztását közösségi hálózatokkal."
+  "cookie_customization_marketing_cookies_text": "Lehetővé teszi a weboldal számára, hogy személyre szabott marketing tartalmat szállítson az Ön viselkedése és érdeklődése alapján. Ezek a sütik nyomon követhetik látogatásait és lehetővé tehetik tartalmak megosztását közösségi hálózatokkal.",
+  "when_you_sit_a_lot": "Ha sokat ülsz munkád során.",
+  "if_you_have_rheumatism": "Ha reumás vagy és ízületi problémákkal küzdesz.",
+  "if_you_have_stressful_lifestyle": "Ha stresszes életviteled és alvási nehézségeid vannak.",
+  "if_you_have_sedentary_lifestyle": "Ha keveset mozogsz a mindennapokban.",
+  "if_you_are_active_in_sports_or_physical_work": "Ha sportolsz és nehéz fizikai munkát végzel.",
+  "if_you_seek_physical_and_mental_refreshment": "Ha csupán testi és lelki felfrissülést keresel.",
+  "when_to_come": "Mikor látogass el hozzám?"
 }

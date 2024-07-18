@@ -17,6 +17,7 @@ import { FormsModule } from '@angular/forms';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { BorderDecorComponent } from './main-elements/border-decor/border-decor.component';
 
+
 @NgModule({
   declarations: [
     AppComponent,

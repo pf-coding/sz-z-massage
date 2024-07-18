@@ -5,14 +5,14 @@ import { CookieService } from './services/cookie.service';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss']
+  styleUrls: ['./app.component.scss'],
 })
-export class AppComponent implements OnInit{
+export class AppComponent implements OnInit {
   title = 'sz-z-massage';
   isMassagePageActive = false;
 
   constructor(private router: Router, private cookieService: CookieService) {
-    this.router.events.subscribe(event => {
+    this.router.events.subscribe((event) => {
       if (event instanceof NavigationEnd) {
         this.isMassagePageActive = this.router.url.includes('/massage-pages/');
       }
@@ -22,14 +22,4 @@ export class AppComponent implements OnInit{
   ngOnInit() {
     this.cookieService.auditCookies();
   }
-
-
-  navigateBack(): void {
-    this.isMassagePageActive = false;
-    this.router.navigate(['/']).then(() => {
-      window.location.hash = '#masszazs-tipusok';
-    });
-  }
 }
-
-

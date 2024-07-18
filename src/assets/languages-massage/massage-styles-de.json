@@ -1,7 +1,7 @@
 [
   {
     "imgSrcNarrow": "https://images.pexels.com/photos/6560304/pexels-photo-6560304.jpeg",
-    "imgSrcArticle": "https://florida-academy.edu/wp-content/uploads/2019/08/fa-massage-featured-image-2-1500x1000.jpg",
+    "imgSrcArticle": "/assets/massage-pages-pictures/svdge.png",
     "title": "Schwedische Massage",
     "descriptionShort": "Unser schwedischer Massageservice bietet ein entspannendes Erlebnis, das sich auf die Linderung von Muskelverspannungen und die allgemeine Verjüngung konzentriert.",
     "descriptionLong": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed quis augue auctor, varius tellus et, fringilla mauris. Fusce ultrices metus vitae felis luctus, at malesuada orci lacinia. Proin commodo, justo et iaculis fermentum, libero dui condimentum arcu, sit amet finibus augue odio ac elit.",
@@ -10,7 +10,12 @@
     "price15hr": "95 EUR",
     "title30min": "30 Minuten",
     "title1hr": "1 Stunde",
-    "title15hr": "1,5 Stunden"
+    "title15hr": "1,5 Stunden",
+    "link30min": "https://relaxz.setmore.com/beta/book?step=time-slot&products=7972faa1-401b-46aa-bab3-e00a210d8fa3&type=service&staff=0de54650-b591-49de-93f0-55a1d626cd8a&staffSelected=true",
+    "link1hr": "https://relaxz.setmore.com/beta/book?step=time-slot&products=5feb4c8c-229b-4845-9954-b5f0a24103fa&type=service&staff=0de54650-b591-49de-93f0-55a1d626cd8a&staffSelected=true",
+    "link15hr": "https://relaxz.setmore.com/beta/book?step=time-slot&products=a2c9bc03-9e9d-48ff-96c1-5e19afecb7a3&type=service&staff=0de54650-b591-49de-93f0-55a1d626cd8a&staffSelected=true",
+    "backToStyles": "Zurück zu den Massagestilen",
+    "bookThis": "Buchen Sie die ausgewählte Massage"
   },
   {
     "imgSrcNarrow": "https://images.pexels.com/photos/3230236/pexels-photo-3230236.jpeg",
@@ -23,7 +28,12 @@
     "price15hr": "100 EUR",
     "title30min": "30 Minuten",
     "title1hr": "1 Stunde",
-    "title15hr": "1,5 Stunden"
+    "title15hr": "1,5 Stunden",
+    "link30min": "https://example.com/thai-30min",
+    "link1hr": "https://example.com/thai-1hr",
+    "link15hr": "https://example.com/thai-15hr",
+    "backToStyles": "Zurück zu den Massagestilen",
+    "bookThis": "Buchen Sie die ausgewählte Massage"
   },
   {
     "imgSrcNarrow": "https://images.pexels.com/photos/19641816/pexels-photo-19641816/free-photo-of-massage-therapist-using-mud-on-a-womans-back.jpeg",
@@ -36,7 +46,12 @@
     "price15hr": "105 EUR",
     "title30min": "30 Minuten",
     "title1hr": "1 Stunde",
-    "title15hr": "1,5 Stunden"
+    "title15hr": "1,5 Stunden",
+    "link30min": "https://example.com/spa-30min",
+    "link1hr": "https://example.com/spa-1hr",
+    "link15hr": "https://example.com/spa-15hr",
+    "backToStyles": "Zurück zu den Massagestilen",
+    "bookThis": "Buchen Sie die ausgewählte Massage"
   },
   {
     "imgSrcNarrow": "https://images.pexels.com/photos/18038435/pexels-photo-18038435/free-photo-of-woman-taking-a-massage.jpeg",
@@ -49,7 +64,12 @@
     "price15hr": "100 EUR",
     "title30min": "30 Minuten",
     "title1hr": "1 Stunde",
-    "title15hr": "1,5 Stunden"
+    "title15hr": "1,5 Stunden",
+    "link30min": "https://example.com/aromatherapie-30min",
+    "link1hr": "https://example.com/aromatherapie-30min",
+    "link15hr": "https://example.com/aromatherapie-30min",
+    "backToStyles": "Zurück zu den Massagestilen",
+    "bookThis": "Buchen Sie die ausgewählte Massage"
   },
   {
     "imgSrcNarrow": "https://images.pexels.com/photos/9268045/pexels-photo-9268045.jpeg",
@@ -62,7 +82,12 @@
     "price15hr": "105 EUR",
     "title30min": "30 Minuten",
     "title1hr": "1 Stunde",
-    "title15hr": "1,5 Stunden"
+    "title15hr": "1,5 Stunden",
+    "link30min": "https://example.com/sport-30min",
+    "link1hr": "https://example.com/sport-1hr",
+    "link15hr": "https://example.com/sport-15hr",
+    "backToStyles": "Zurück zu den Massagestilen",
+    "bookThis": "Buchen Sie die ausgewählte Massage"
   },
   {
     "imgSrcNarrow": "https://images.pexels.com/photos/9268042/pexels-photo-9268042.jpeg",
@@ -75,6 +100,11 @@
     "price15hr": "110 EUR",
     "title30min": "30 Minuten",
     "title1hr": "1 Stunde",
-    "title15hr": "1,5 Stunden"
+    "title15hr": "1,5 Stunden",
+    "link30min": "https://example.com/hot-stone-30min",
+    "link1hr": "https://example.com/hot-stone-1hr",
+    "link15hr": "https://example.com/hot-stone-15hr",
+    "backToStyles": "Zurück zu den Massagestilen",
+    "bookThis": "Buchen Sie die ausgewählte Massage"
   }
 ]

@@ -1,6 +1,11 @@
 <section *ngIf="selectedMassagePage" class="massage-page">
   <div class="container">
     <div class="row">
+      <div class="d-flex justify-content-center mb-4 pt-5" id="foglalas">
+        <button (click)="navigateBack()" class="btn-booking">
+          {{ selectedMassagePage.backToStyles }}
+        </button>
+      </div>
       <div class="col-lg-6">
         <img
           [src]="selectedMassagePage.imgSrcArticle"
@@ -13,6 +18,7 @@
         <p class="lead article-description">
           {{ selectedMassagePage.descriptionLong }}
         </p>
+        <!-- <div class="lead article-description">Kérlek válassz időtartamot!</div> -->
         <h2 class="article-price">{{ selectedPrice }}</h2>
         <div class="btn-group mb-4">
           <button
@@ -37,27 +43,10 @@
             {{ selectedMassagePage.title15hr }}
           </button>
         </div>
-        <div>
-          <button class="btn">
-            <script
-              id="setmore_script"
-              type="text/javascript"
-              src="https://storage.googleapis.com/fullintegration-live/webComponentAppListing/Container/setmoreIframeLive.js"
-            ></script>
-            <a
-              target="_blank"
-              style="float: none"
-              id="Setmore_button_iframe"
-              href="https://booking.setmore.com/scheduleappointment/e23a8bff-18d2-41ef-8817-500cdac23109"
-              ><img
-                width="50px"
-                height="50px"
-                border="none"
-                src="https://www.svgrepo.com/show/513273/book-opened.svg"
-                alt="Book an appointment with Zoltán Szabó using Setmore"
-              />
-            </a>
-          </button>
+        <div class="d-flex justify-content-center">
+          <a [href]="bookingLink" target="_blank" class="btn-booking">
+            {{ selectedMassagePage.bookThis }}
+          </a>
         </div>
       </div>
     </div>

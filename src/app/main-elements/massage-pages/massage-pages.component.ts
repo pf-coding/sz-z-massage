@@ -14,6 +14,7 @@ export class MassagePagesComponent implements OnInit {
   isMassagePageActive: boolean = false;
   selectedPrice: string = ''; // új változó az árak kezelésére
   selectedDuration: string = ''; // új változó a kiválasztott időtartam kezelésére
+  bookingLink: string = ''; // új változó a foglalási link kezelésére
 
   constructor(
     private route: ActivatedRoute,
@@ -34,6 +35,12 @@ export class MassagePagesComponent implements OnInit {
         }
       });
     });
+    window.onpopstate = (event) => {
+      if (this.isMassagePageActive) {
+        event.preventDefault();
+        this.navigateBack();
+      }
+    };
   }
 
   fetchMassagePage(pageName: string, lang: string): void {
@@ -44,6 +51,7 @@ export class MassagePagesComponent implements OnInit {
           data.find((page) => page.title === pageName) || null;
         this.selectedPrice = this.selectedMassagePage?.price30min || ''; // Alapértelmezett ár beállítása
         this.selectedDuration = '30min'; // Alapértelmezett időtartam beállítása
+        this.updateBookingLink(); // Alapértelmezett foglalási link beállítása
         this.isMassagePageActive = true; // Oldal aktívvá tétele
       },
       (error) => {
@@ -65,6 +73,19 @@ export class MassagePagesComponent implements OnInit {
         this.selectedPrice = this.selectedMassagePage.price15hr;
       }
       this.selectedDuration = duration; // Kiválasztott időtartam frissítése
+      this.updateBookingLink(); // Foglalási link frissítése
+    }
+  }
+
+  updateBookingLink(): void {
+    if (this.selectedMassagePage) {
+      if (this.selectedDuration === '30min') {
+        this.bookingLink = this.selectedMassagePage.link30min;
+      } else if (this.selectedDuration === '1hr') {
+        this.bookingLink = this.selectedMassagePage.link1hr;
+      } else if (this.selectedDuration === '1.5hr') {
+        this.bookingLink = this.selectedMassagePage.link15hr;
+      }
     }
   }
 

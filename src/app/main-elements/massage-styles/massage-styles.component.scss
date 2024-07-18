@@ -3,9 +3,65 @@
   justify-content: center;
 }
 
-.btn {
-  background-color: $primary-color;
-  color: $secondary-color;
+.btn-booking {
+  position: relative;
+  cursor: pointer;
+  margin: 10px 15px; // Csökkentett margó a jobb reszponzivitás érdekében
+  font-weight: 400;
+  font-style: normal;
+  letter-spacing: 1px;
+  border: none;
+  padding: 14px;
+  background: $secondary-color;
+  color: $primary-color;
+  text-transform: uppercase;
+  transition: all 0.3s; // Áttűnési hatás a hover állapothoz
+  text-align: center;
+
+  &:before {
+    content: "";
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    top: -5px;
+    left: -5px;
+    border-top: 3px solid $secondary-color;
+    border-left: 3px solid $secondary-color;
+    transition: all 0.5s;
+  }
+
+  &:after {
+    content: "";
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    bottom: -5px;
+    right: -5px;
+    border-bottom: 3px solid $secondary-color;
+    border-right: 3px solid $secondary-color;
+    transition: all 0.5s;
+  }
+
+  &:hover:before,
+  &:hover:after {
+    height: 100%;
+    width: 100%;
+  }
+}
+
+// További stílusok a reszponzivitás biztosításához
+@media (max-width: 768px) {
+  .btn-booking {
+    padding: 12px 24px;
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 576px) {
+  .btn-booking {
+    padding: 10px 20px;
+    font-size: 12px;
+  }
 }
 
 .services-cards {

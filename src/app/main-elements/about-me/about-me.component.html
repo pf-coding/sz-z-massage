@@ -14,22 +14,42 @@
         </p>
         <hr class="w-50 mx-auto mb-5 mb-xl-9 border-dark-subtle" />
         <h3 class="fs-6 mb-5 text-secondary text-center text-uppercase">
-          Mikor látogass el hozzám?
+          {{
+            translationService.getTranslation("when_to_come")
+          }}
         </h3>
 
         <div class="list">
           <ul>
-            <li><span>Ha sokat ülsz munkád során.</span></li>
             <li>
-              <span>Ha reumás vagy és izületi problémákkal küzdesz.</span>
+              <span>{{
+                translationService.getTranslation("when_you_sit_a_lot")
+              }}</span>
             </li>
             <li>
-              <span>Ha stesszes életviteled és alvási nehézségeid vannak.</span>
+              <span>{{
+                translationService.getTranslation("if_you_have_rheumatism")
+              }}</span
+              >
             </li>
-            <li><span>Ha keveset mozogsz a mindennapokban.</span></li>
-            <li><span>Ha sportolsz és nehéz fizikai munkát végzel.</span></li>
             <li>
-              <span>Ha csupán testi és lelki felfrissülést keresel.</span>
+              <span>{{
+                translationService.getTranslation("if_you_have_stressful_lifestyle")
+              }}</span
+              >
+            </li>
+            <li><span>{{
+              translationService.getTranslation("if_you_have_sedentary_lifestyle")
+            }}</span></li>
+            
+            <li><span>{{
+              translationService.getTranslation("if_you_are_active_in_sports_or_physical_work")
+            }}</span></li>
+            
+            <li>
+              <span>{{
+                translationService.getTranslation("if_you_seek_physical_and_mental_refreshment")
+              }}</span>
             </li>
           </ul>
         </div>
