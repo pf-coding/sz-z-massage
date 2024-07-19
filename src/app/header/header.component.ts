@@ -1,17 +1,46 @@
-import { Component, HostListener } from '@angular/core';
+import { Component, HostListener, OnInit } from '@angular/core';
 import { TranslationService } from '../services/translation.service';
-// Nem kell importálni a Bootstrap-et közvetlenül, mert az már globálisan elérhető
+import { HttpClient } from '@angular/common/http';
+import * as XLSX from 'xlsx';
 
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.scss'],
 })
-export class HeaderComponent {
-  constructor(public translationService: TranslationService) {}
+export class HeaderComponent implements OnInit {
+  jsonData: any;
+
+  constructor(
+    private http: HttpClient,
+    public translationService: TranslationService
+  ) {}
+
+  ngOnInit(): void {
+    this.loadJSONData();
+  }
+
+  loadJSONData() {
+    const lang = this.translationService.getLang();
+    const filePath = `/assets/languages-massage/massage-styles-${lang}.json`;
+    this.http.get(filePath).subscribe((data) => {
+      this.jsonData = data;
+    });
+  }
+
+  exportToExcel() {
+    const lang = this.translationService.getLang();
+    const worksheet: XLSX.WorkSheet = XLSX.utils.json_to_sheet(this.jsonData);
+    const workbook: XLSX.WorkBook = {
+      Sheets: { data: worksheet },
+      SheetNames: ['data'],
+    };
+    XLSX.writeFile(workbook, `massage-styles-${lang}.xlsx`);
+  }
 
   changeLanguage(lang: string): void {
     this.translationService.setLang(lang);
+    this.loadJSONData(); // Reload data for the new language
     this.closeMenu();
   }
 

@@ -102,7 +102,7 @@
 
   .card {
     opacity: 0; // Kezdetben nem látható
-
+    width: 90%; // Csökkentett szélesség
     height: 100%; // Egységes magasság
     transition: opacity 0.5s ease, transform 0.3s ease-in-out,
       box-shadow 0.3s ease-in-out;

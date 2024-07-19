@@ -7,6 +7,10 @@
   right: 0;
   z-index: 1000;
   background: $primary-color;
+
+  a {
+    cursor: pointer;
+  }
 }
 
 @media screen and (max-width: 991.98px) {
