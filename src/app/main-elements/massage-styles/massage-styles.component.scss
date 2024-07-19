@@ -101,6 +101,8 @@
   background-color: $primary-color;
 
   .card {
+    cursor: pointer;
+
     opacity: 0; // Kezdetben nem látható
     width: 90%; // Csökkentett szélesség
     height: 100%; // Egységes magasság
@@ -129,6 +131,7 @@
 
       img {
         transition: filter 0.3s ease-in-out;
+        border-radius: 2%;
         @include hover-filter(1); // Alapértelmezett fényerő és hover hatás
       }
 
