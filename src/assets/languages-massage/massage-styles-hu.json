@@ -1,6 +1,6 @@
 [
   {
-    "imgSrcNarrow": "https://images.pexels.com/photos/6560304/pexels-photo-6560304.jpeg",
+    "imgSrcNarrow": "/assets/massage-styles-pictures/svedenNarrow.jpg",
     "imgSrcArticle": "/assets/massage-pages-pictures/svdhu.png",
     "title": "Svéd Masszázs",
     "descriptionShort": "Svéd masszázs szolgáltatásunk pihentető élményt nyújt, amely az izomfeszültség enyhítésére és az általános felfrissülésre összpontosít.",
@@ -18,7 +18,7 @@
     "bookThis": "Lefoglalom a kiválasztott masszázst"
   },
   {
-    "imgSrcNarrow": "https://images.pexels.com/photos/3230236/pexels-photo-3230236.jpeg",
+    "imgSrcNarrow": "/assets/massage-styles-pictures/thaiNarrow.jpg",
     "imgSrcArticle": "https://florida-academy.edu/wp-content/uploads/2019/08/fa-massage-featured-image-2-1500x1000.jpg",
     "title": "Thai Masszázs",
     "descriptionShort": "Tapasztalja meg a thai masszázs terápiás előnyeit, amely akupresszúrát, energia munkát és segített jóga pózokat ötvöz. Ideális a rugalmasság és az energiaáramlás javítására.",
@@ -36,7 +36,7 @@
     "bookThis": "Lefoglalom a kiválasztott masszázst"
   },
   {
-    "imgSrcNarrow": "https://images.pexels.com/photos/19641816/pexels-photo-19641816/free-photo-of-massage-therapist-using-mud-on-a-womans-back.jpeg",
+    "imgSrcNarrow": "/assets/massage-styles-pictures/spaNarrow.jpg",
     "imgSrcArticle": "https://florida-academy.edu/wp-content/uploads/2019/08/fa-massage-featured-image-2-1500x1000.jpg",
     "title": "Spa Masszázs",
     "descriptionShort": "Kényeztesse magát spa masszázs kezeléseinkkel, amelyek célja, hogy kényeztessék és revitalizálják testét és elméjét. Kényeztesse magát egy luxus spa élménnyel.",
@@ -54,7 +54,7 @@
     "bookThis": "Lefoglalom a kiválasztott masszázst"
   },
   {
-    "imgSrcNarrow": "https://images.pexels.com/photos/18038435/pexels-photo-18038435/free-photo-of-woman-taking-a-massage.jpeg",
+    "imgSrcNarrow": "/assets/massage-styles-pictures/aromaNarrow.jpg",
     "imgSrcArticle": "https://florida-academy.edu/wp-content/uploads/2019/08/fa-massage-featured-image-2-1500x1000.jpg",
     "title": "Aromaterápiás Masszázs",
     "descriptionShort": "Aromaterápiás masszázsunk illóolajok használatával segít a teljes ellazulásban és a test energetizálásában.",
@@ -72,7 +72,7 @@
     "bookThis": "Lefoglalom a kiválasztott masszázst"
   },
   {
-    "imgSrcNarrow": "https://images.pexels.com/photos/9268045/pexels-photo-9268045.jpeg",
+    "imgSrcNarrow": "/assets/massage-styles-pictures/sportNarrow.jpg",
     "imgSrcArticle": "https://florida-academy.edu/wp-content/uploads/2019/08/fa-massage-featured-image-2-1500x1000.jpg",
     "title": "Sportmasszázs",
     "descriptionShort": "Sportmasszázsunk segít az izmok gyors regenerálódásában és a teljesítmény növelésében, különösen intenzív edzések után.",
@@ -90,7 +90,7 @@
     "bookThis": "Lefoglalom a kiválasztott masszázst"
   },
   {
-    "imgSrcNarrow": "https://images.pexels.com/photos/9268042/pexels-photo-9268042.jpeg",
+    "imgSrcNarrow": "/assets/massage-styles-pictures/lavaNarrow.jpg",
     "imgSrcArticle": "https://florida-academy.edu/wp-content/uploads/2019/08/fa-massage-featured-image-2-1500x1000.jpg",
     "title": "Lávaköves Masszázs",
     "descriptionShort": "A lávaköves masszázs meleg kövek használatával mély relaxációt és izomlazítást biztosít.",

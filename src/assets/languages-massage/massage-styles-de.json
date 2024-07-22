@@ -1,6 +1,6 @@
 [
   {
-    "imgSrcNarrow": "https://images.pexels.com/photos/6560304/pexels-photo-6560304.jpeg",
+    "imgSrcNarrow": "/assets/massage-styles-pictures/svedenNarrow.jpg",
     "imgSrcArticle": "/assets/massage-pages-pictures/svdge.png",
     "title": "Schwedische Massage",
     "descriptionShort": "Unser schwedischer Massageservice bietet ein entspannendes Erlebnis, das sich auf die Linderung von Muskelverspannungen und die allgemeine Verjüngung konzentriert.",
@@ -18,7 +18,7 @@
     "bookThis": "Buchen Sie die ausgewählte Massage"
   },
   {
-    "imgSrcNarrow": "https://images.pexels.com/photos/3230236/pexels-photo-3230236.jpeg",
+    "imgSrcNarrow": "/assets/massage-styles-pictures/thaiNarrow.jpg",
     "imgSrcArticle": "https://florida-academy.edu/wp-content/uploads/2019/08/fa-massage-featured-image-2-1500x1000.jpg",
     "title": "Thailändische Massage",
     "descriptionShort": "Erleben Sie die therapeutischen Vorteile der thailändischen Massage, die Akupressur, Energiearbeit und unterstützte Yoga-Posen kombiniert. Ideal zur Verbesserung der Flexibilität und des Energieflusses.",
@@ -36,7 +36,7 @@
     "bookThis": "Buchen Sie die ausgewählte Massage"
   },
   {
-    "imgSrcNarrow": "https://images.pexels.com/photos/19641816/pexels-photo-19641816/free-photo-of-massage-therapist-using-mud-on-a-womans-back.jpeg",
+    "imgSrcNarrow": "/assets/massage-styles-pictures/spaNarrow.jpg",
     "imgSrcArticle": "https://florida-academy.edu/wp-content/uploads/2019/08/fa-massage-featured-image-2-1500x1000.jpg",
     "title": "Spa Massage",
     "descriptionShort": "Gönnen Sie sich unsere Spa-Massagebehandlungen, die darauf abzielen, Körper und Geist zu verwöhnen und zu revitalisieren. Verwöhnen Sie sich mit einem luxuriösen Spa-Erlebnis.",
@@ -54,7 +54,7 @@
     "bookThis": "Buchen Sie die ausgewählte Massage"
   },
   {
-    "imgSrcNarrow": "https://images.pexels.com/photos/18038435/pexels-photo-18038435/free-photo-of-woman-taking-a-massage.jpeg",
+    "imgSrcNarrow": "/assets/massage-styles-pictures/aromaNarrow.jpg",
     "imgSrcArticle": "https://florida-academy.edu/wp-content/uploads/2019/08/fa-massage-featured-image-2-1500x1000.jpg",
     "title": "Aromatherapie-Massage",
     "descriptionShort": "Unsere Aromatherapie-Massage verwendet ätherische Öle, um Ihnen zu helfen, sich vollständig zu entspannen und Ihren Körper zu energetisieren.",
@@ -72,7 +72,7 @@
     "bookThis": "Buchen Sie die ausgewählte Massage"
   },
   {
-    "imgSrcNarrow": "https://images.pexels.com/photos/9268045/pexels-photo-9268045.jpeg",
+    "imgSrcNarrow": "/assets/massage-styles-pictures/sportNarrow.jpg",
     "imgSrcArticle": "https://florida-academy.edu/wp-content/uploads/2019/08/fa-massage-featured-image-2-1500x1000.jpg",
     "title": "Sportmassage",
     "descriptionShort": "Unsere Sportmassage hilft bei der Muskelregeneration und Leistungssteigerung, besonders nach intensiven Workouts.",
@@ -90,7 +90,7 @@
     "bookThis": "Buchen Sie die ausgewählte Massage"
   },
   {
-    "imgSrcNarrow": "https://images.pexels.com/photos/9268042/pexels-photo-9268042.jpeg",
+    "imgSrcNarrow": "/assets/massage-styles-pictures/lavaNarrow.jpg",
     "imgSrcArticle": "https://florida-academy.edu/wp-content/uploads/2019/08/fa-massage-featured-image-2-1500x1000.jpg",
     "title": "Hot Stone Massage",
     "descriptionShort": "Die Hot-Stone-Massage bietet tiefe Entspannung und Muskelentspannung durch den Einsatz von erhitzten Steinen.",
