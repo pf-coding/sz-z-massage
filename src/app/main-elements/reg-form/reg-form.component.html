@@ -1,0 +1,47 @@
+<!-- <div class="container">
+  <div class="col-12 h-25 d-inline-block title">
+    <h1>.my .user .form</h1>
+  </div>
+  <form
+    *ngIf="userForm"
+    class="row g-3"
+    [formGroup]="userForm"
+    (ngSubmit)="submitUserForm()"
+  >
+    <div class="col-md-6">
+      <label for="inputUsername" class="form-label"> Username</label>
+      <input
+        type="text"
+        class="form-control"
+        id="inputName"
+        formControlName="name"
+      />
+      <small *ngIf="name?.invalid && name?.dirty" class="text-danger"
+        >Needs to be a text from min length 5, max lenght 10</small
+      >
+    </div>
+    <div class="col-md-6">
+      <label for="inputEmail" class="form-label">Your email:</label>
+      <input
+        type="email"
+        class="form-control"
+        id="inputEmail"
+        formControlName="email"
+      />
+      <small *ngIf="email?.invalid && email?.dirty" class="text-danger"
+        >Please enter a valid email address," "Invalid email format," "Missing
+        '' symbol," and "Invalid domain name.
+      </small>
+    </div>
+    <div class="col-12">
+      <button class="btn btn-primary">{{ id ? "Update" : "Save" }}</button>
+      <button
+        *ngIf="user?.id"
+        class="btn btn-tertiary m-3"
+        (click)="deleteUserFromList(id)"
+      >
+        Delete
+      </button>
+    </div>
+  </form>
+</div> -->

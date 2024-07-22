@@ -2,9 +2,11 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes, Scroll } from '@angular/router';
 import { MassageStylesComponent } from './main-elements/massage-styles/massage-styles.component';
 import { MassagePagesComponent } from './main-elements/massage-pages/massage-pages.component';
+// import { RegFormComponent } from './main-elements/reg-form/reg-form.component';
 
 const routes: Routes = [
   { path: '', component: MassageStylesComponent },
+  // { path: 'user', component: RegFormComponent },
   { path: 'massage-pages/:pageName', component: MassagePagesComponent },
   { path: '**', redirectTo: '' }, // Wildcard route for a 404 page
 ];

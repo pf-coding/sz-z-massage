@@ -1,0 +1,9 @@
+{
+  "projects": {
+    "default": "sz-z-relaxz",
+    "relaxz": "sz-z-relaxz"
+  },
+  "targets": {},
+  "etags": {},
+  "dataconnectEmulatorConfig": {}
+}

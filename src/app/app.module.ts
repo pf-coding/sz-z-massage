@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { ReactiveFormsModule } from '@angular/forms';
+import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -13,10 +13,12 @@ import { MassageStylesComponent } from './main-elements/massage-styles/massage-s
 import { MassagePagesComponent } from './main-elements/massage-pages/massage-pages.component';
 import { CookieNoticeComponent } from './main-elements/cookies/cookie-notice/cookie-notice.component';
 import { CookieCustomizationModalComponent } from './main-elements/cookies/cookie-customization-modal/cookie-customization-modal.component';
-import { FormsModule } from '@angular/forms';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { BorderDecorComponent } from './main-elements/border-decor/border-decor.component';
-
+// import { AngularFireModule } from '@angular/fire/compat';
+// import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
+// import { AngularFireAuthModule } from '@angular/fire/compat/auth';
+// import { environment } from '../environments/environment';
 
 @NgModule({
   declarations: [
@@ -39,6 +41,9 @@ import { BorderDecorComponent } from './main-elements/border-decor/border-decor.
     HttpClientModule,
     FormsModule,
     FontAwesomeModule,
+    // AngularFireModule.initializeApp(environment.firebaseConfig),
+    // AngularFirestoreModule, // Firestore module
+    // AngularFireAuthModule, // Firebase Authentication module
   ],
   providers: [],
   bootstrap: [AppComponent],
