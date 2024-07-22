@@ -16,11 +16,12 @@ import { CookieCustomizationModalComponent } from './main-elements/cookies/cooki
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { BorderDecorComponent } from './main-elements/border-decor/border-decor.component';
 import { environment } from '../environments/environment';
-import { AngularFireModule } from '@angular/fire/compat';
-import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
 import { RegFormComponent } from './main-elements/reg-form/reg-form.component';
 import { RouterModule } from '@angular/router';
 import { UserListComponent } from './main-elements/user-list/user-list.component';
+import { provideAuth, getAuth } from '@angular/fire/auth';
+import { initializeApp, provideFirebaseApp } from '@angular/fire/app';
+import { provideFirestore, getFirestore } from '@angular/fire/firestore';
 
 @NgModule({
   declarations: [
@@ -46,8 +47,9 @@ import { UserListComponent } from './main-elements/user-list/user-list.component
     HttpClientModule,
     FormsModule,
     FontAwesomeModule,
-    AngularFireModule.initializeApp(environment.firebaseConfig),
-    AngularFirestoreModule, // Ez biztosítja a Firestore elérhetőségét
+    provideFirebaseApp(() => initializeApp(environment.firebase)),
+    provideAuth(() => getAuth()),
+    provideFirestore(() => getFirestore()),
   ],
   providers: [],
   bootstrap: [AppComponent],
