@@ -15,8 +15,13 @@ export class AppComponent implements OnInit {
     this.router.events.subscribe((event) => {
       if (event instanceof NavigationEnd) {
         this.isMassagePageActive = this.router.url.includes('/massage-pages/');
+        console.log('isMassagePageActive:', this.isMassagePageActive);
       }
     });
+  }
+
+  navigateToUsers() {
+    this.router.navigate(['/users']);
   }
 
   ngOnInit() {

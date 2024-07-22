@@ -1,0 +1,108 @@
+// $primary-color: #606c38;
+// $secondary-color: #283618;
+// $background-color: #fefae0;
+// $accent-color: #dda15e;
+// $text-color: #bc6c25;
+
+// .container {
+//   background-color: $background-color;
+//   padding: 20px;
+//   border-radius: 10px;
+
+//   form {
+//     background-color: $secondary-color;
+//     padding: 30px;
+//     border-radius: 15px;
+//     box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+
+//     .form-label {
+//       color: $accent-color;
+//     }
+
+//     .form-control {
+//       background-color: transparent;
+//       border: 2px solid $accent-color;
+//       color: $accent-color;
+
+//       &:focus {
+//         border-color: $primary-color;
+//         box-shadow: 0 0 10px $primary-color;
+//         color: $primary-color;
+//       }
+//     }
+
+//     .text-danger {
+//       color: $accent-color;
+//       font-style: italic;
+//     }
+
+//     .btn-primary {
+//       background-color: $primary-color;
+//       border-color: $primary-color;
+//       transition: background-color 0.3s;
+
+//       &:hover {
+//         background-color: darken($primary-color, 10%);
+//         border-color: darken($primary-color, 10%);
+//       }
+//     }
+//     .btn-tertiary {
+//       background-color: $accent-color;
+//       border-color: $accent-color;
+//       transition: background-color 0.3s;
+
+//       &:hover {
+//         background-color: darken($accent-color, 10%);
+//         border-color: darken($accent-color, 10%);
+//       }
+//     }
+
+//     .form-check-input:checked {
+//       background-color: $accent-color;
+//       border-color: $accent-color;
+//     }
+
+//     .form-check-label {
+//       color: $primary-color;
+//     }
+
+//     .platform-label {
+//       color: $primary-color;
+//       font-weight: bold;
+//       margin-bottom: 10px;
+//     }
+
+//     .custom-select {
+//       background-color: $secondary-color;
+//       color: $accent-color;
+//     }
+//   }
+// }
+
+// body {
+//   background-color: #010;
+// }
+
+// .title {
+//   font-family: "Roboto", sans-serif;
+//   font-family: "Roboto Mono", monospace;
+//   text-align: center;
+//   color: #fff;
+//   display: flex;
+//   flex-direction: column;
+//   align-items: center;
+//   justify-content: center;
+//   height: 100vh;
+//   letter-spacing: 1px;
+//   line-height: 2;
+// }
+
+// h1 {
+//   background-image: url(https://media.giphy.com/media/26BROrSHlmyzzHf3i/giphy.gif);
+//   background-size: cover;
+//   color: transparent;
+//   -moz-background-clip: text;
+//   -webkit-background-clip: text;
+//   font-size: 50px;
+//   margin: 30;
+// }

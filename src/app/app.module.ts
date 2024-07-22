@@ -15,10 +15,12 @@ import { CookieNoticeComponent } from './main-elements/cookies/cookie-notice/coo
 import { CookieCustomizationModalComponent } from './main-elements/cookies/cookie-customization-modal/cookie-customization-modal.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { BorderDecorComponent } from './main-elements/border-decor/border-decor.component';
-// import { AngularFireModule } from '@angular/fire/compat';
-// import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
-// import { AngularFireAuthModule } from '@angular/fire/compat/auth';
-// import { environment } from '../environments/environment';
+import { environment } from '../environments/environment';
+import { AngularFireModule } from '@angular/fire/compat';
+import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
+import { RegFormComponent } from './main-elements/reg-form/reg-form.component';
+import { RouterModule } from '@angular/router';
+import { UserListComponent } from './main-elements/user-list/user-list.component';
 
 @NgModule({
   declarations: [
@@ -33,17 +35,19 @@ import { BorderDecorComponent } from './main-elements/border-decor/border-decor.
     CookieNoticeComponent,
     CookieCustomizationModalComponent,
     BorderDecorComponent,
+    RegFormComponent,
+    UserListComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
+    RouterModule,
     ReactiveFormsModule,
     HttpClientModule,
     FormsModule,
     FontAwesomeModule,
-    // AngularFireModule.initializeApp(environment.firebaseConfig),
-    // AngularFirestoreModule, // Firestore module
-    // AngularFireAuthModule, // Firebase Authentication module
+    AngularFireModule.initializeApp(environment.firebaseConfig),
+    AngularFirestoreModule, // Ez biztosítja a Firestore elérhetőségét
   ],
   providers: [],
   bootstrap: [AppComponent],
