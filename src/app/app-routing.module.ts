@@ -1,11 +1,20 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { MassageStylesComponent } from './main-elements/massage-styles/massage-styles.component';
+
 import { MassagePagesComponent } from './main-elements/massage-pages/massage-pages.component';
-import { UserListComponent } from './main-elements/user-list/user-list.component'; // Importáld a UserListComponent-et
+import { RegFormComponent } from './main-elements/reg-form/reg-form.component';
+import { UsersComponent } from './main-elements/users/users.component';
 
 const routes: Routes = [
-  { path: '', component: UserListComponent },
+  { path: 'regform', component: RegFormComponent },
+  {
+    path: 'users',
+    component: UsersComponent,
+    children: [
+      { path: ':id', component: RegFormComponent },
+      { path: ':id/edit', component: RegFormComponent },
+    ],
+  },
   { path: 'massage-pages/:pageName', component: MassagePagesComponent },
   { path: '**', redirectTo: '' },
 ];

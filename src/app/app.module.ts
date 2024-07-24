@@ -22,6 +22,7 @@ import { UserListComponent } from './main-elements/user-list/user-list.component
 import { provideAuth, getAuth } from '@angular/fire/auth';
 import { initializeApp, provideFirebaseApp } from '@angular/fire/app';
 import { provideFirestore, getFirestore } from '@angular/fire/firestore';
+import { UsersComponent } from './main-elements/users/users.component';
 
 @NgModule({
   declarations: [
@@ -38,6 +39,7 @@ import { provideFirestore, getFirestore } from '@angular/fire/firestore';
     BorderDecorComponent,
     RegFormComponent,
     UserListComponent,
+    UsersComponent,
   ],
   imports: [
     BrowserModule,

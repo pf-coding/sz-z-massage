@@ -10,6 +10,7 @@ import { CookieService } from './services/cookie.service';
 export class AppComponent implements OnInit {
   title = 'sz-z-massage';
   isMassagePageActive = false;
+  isUserPageActive = false;
 
   constructor(private router: Router, private cookieService: CookieService) {
     this.router.events.subscribe((event) => {
@@ -18,10 +19,20 @@ export class AppComponent implements OnInit {
         console.log('isMassagePageActive:', this.isMassagePageActive);
       }
     });
-  }
-
-  navigateToUsers() {
-    this.router.navigate(['/users']);
+    this.router.events.subscribe((event) => {
+      if (event instanceof NavigationEnd) {
+        this.isUserPageActive = this.router.url.includes('users');
+        console.log('isUserPageActive:', this.isUserPageActive);
+      }
+    });
+    this.router.events.subscribe((event) => {
+      if (event instanceof NavigationEnd) {
+        this.isUserPageActive =
+          this.router.url.includes('users') ||
+          this.router.url.includes('regform');
+        console.log('isUserPageActive:', this.isUserPageActive);
+      }
+    });
   }
 
   ngOnInit() {

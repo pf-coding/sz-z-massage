@@ -30,7 +30,7 @@ export class UserService {
       map((snapshot) => {
         const resultList = snapshot.docs.map((doc) => {
           const userData: UserModel = doc.data() as UserModel;
-          userData.id = doc.id; // Assure that 'id' field is handled correctly
+          userData.id = doc.id;
           return userData;
         });
         return resultList;
@@ -40,7 +40,6 @@ export class UserService {
 
   getUser(id: string): Observable<UserModel> {
     const userDocRef = doc(this.firestore, `users/${id}`);
-    console.log('Document Reference:', userDocRef);
     return docData(userDocRef, { idField: 'id' }) as Observable<UserModel>;
   }
 
