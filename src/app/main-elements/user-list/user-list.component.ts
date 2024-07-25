@@ -4,6 +4,13 @@ import { UserModel } from 'src/app/models/user.model';
 import { Router } from '@angular/router';
 import * as XLSX from 'xlsx';
 import * as FileSaver from 'file-saver';
+import {
+  AbstractControl,
+  FormControl,
+  FormGroup,
+  Validators,
+} from '@angular/forms';
+import { AuthService } from 'src/app/services/auth-service.service';
 
 @Component({
   selector: 'app-user-list',
@@ -11,6 +18,19 @@ import * as FileSaver from 'file-saver';
   styleUrls: ['./user-list.component.scss'],
 })
 export class UserListComponent implements OnInit {
+  public loginForm: FormGroup = new FormGroup({
+    email: new FormControl('', [Validators.required, Validators.email]),
+    password: new FormControl('', [Validators.required]),
+  });
+
+  get email(): AbstractControl | null {
+    return this.loginForm.get('email');
+  }
+
+  get password(): AbstractControl | null {
+    return this.loginForm.get('password');
+  }
+
   users: UserModel[] = [];
   paginatedUsers: UserModel[] = [];
   currentPage: number = 1;
@@ -21,7 +41,11 @@ export class UserListComponent implements OnInit {
   sortDirection: 'asc' | 'desc' = 'asc';
   sortKey: keyof UserModel | 'index' = 'index';
 
-  constructor(private userService: UserService, private router: Router) {}
+  constructor(
+    private userService: UserService,
+    private router: Router,
+    private authService: AuthService
+  ) {}
 
   ngOnInit(): void {
     this.userService.getUsersWithGetDoc().subscribe({
@@ -136,6 +160,21 @@ export class UserListComponent implements OnInit {
     this.saveAsExcelFile(excelBuffer, 'users');
   }
 
+  exportFilteredToExcel() {
+    const worksheet: XLSX.WorkSheet = XLSX.utils.json_to_sheet(
+      this.paginatedUsers
+    );
+    const workbook: XLSX.WorkBook = {
+      Sheets: { data: worksheet },
+      SheetNames: ['data'],
+    };
+    const excelBuffer: any = XLSX.write(workbook, {
+      bookType: 'xlsx',
+      type: 'array',
+    });
+    this.saveAsExcelFile(excelBuffer, 'filtered_users');
+  }
+
   private saveAsExcelFile(buffer: any, fileName: string): void {
     const data: Blob = new Blob([buffer], {
       type: EXCEL_TYPE,
@@ -144,6 +183,23 @@ export class UserListComponent implements OnInit {
       data,
       fileName + '_export_' + new Date().getTime() + EXCEL_EXTENSION
     );
+  }
+
+  refreshList() {
+    window.location.reload();
+  }
+
+  goToHomePage() {
+    this.router.navigate(['/']);
+  }
+
+  public registration() {
+    this.authService.registration(this.loginForm.value).subscribe();
+  }
+
+  public logout() {
+    this.authService.logout;
+    this.router.navigate(['/']);
   }
 }
 

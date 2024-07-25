@@ -1,11 +1,12 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-
+import { SignInComponent } from './main-elements/sign-in/sign-in.component';
 import { MassagePagesComponent } from './main-elements/massage-pages/massage-pages.component';
 import { RegFormComponent } from './main-elements/reg-form/reg-form.component';
 import { UsersComponent } from './main-elements/users/users.component';
 
 const routes: Routes = [
+  { path: 'sign-in', component: SignInComponent },
   { path: 'regform', component: RegFormComponent },
   {
     path: 'users',

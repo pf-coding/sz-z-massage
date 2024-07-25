@@ -1,0 +1,10 @@
+@media (max-width: 576px) {
+  .table {
+    font-size: 0.875rem; /* Kisebb betűméret mobilon */
+  }
+}
+
+.email-column {
+  word-break: break-word; /* Sortörés engedélyezése az email oszlopban */
+}
+

@@ -1,0 +1,81 @@
+<!-- sign-in.component.html -->
+<!-- Button trigger modal -->
+<button
+  type="button"
+  class="btn btn-primary"
+  data-bs-toggle="modal"
+  data-bs-target="#loginModal"
+>
+  Admin login
+</button>
+
+<!-- Modal -->
+<div
+  class="modal fade"
+  id="loginModal"
+  tabindex="-1"
+  aria-labelledby="loginModalLabel"
+  aria-hidden="true"
+>
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="loginModalLabel">Admin Login</h5>
+        <button
+          type="button"
+          class="btn-close"
+          data-bs-dismiss="modal"
+          aria-label="Close"
+        ></button>
+      </div>
+      <div class="modal-body">
+        <form [formGroup]="loginForm">
+          <div *ngIf="email" class="form-floating mb-3">
+            <input
+              formControlName="email"
+              class="form-control"
+              id="email"
+              type="email"
+              placeholder="Enter your email..."
+            />
+            <label for="email">Email address</label>
+            <div
+              *ngIf="email.invalid && email.touched"
+              class="small text-danger"
+            >
+              <span *ngIf="email.touched">An email is required.</span>
+              <span *ngIf="email.invalid">Email is not valid.</span>
+            </div>
+          </div>
+
+          <div *ngIf="password" class="form-floating mb-3">
+            <input
+              formControlName="password"
+              class="form-control"
+              type="password"
+              id="password"
+              placeholder="Enter your password..."
+            />
+            <label for="password">Password</label>
+            <div
+              *ngIf="password.invalid && password.touched"
+              class="small text-danger"
+            >
+              A password is required.
+            </div>
+          </div>
+
+          <button
+            [disabled]="loginForm.invalid"
+            (click)="login()"
+            class="btn btn-primary text-uppercase w-100"
+            id="loginButton"
+            type="submit"
+          >
+            Admin login
+          </button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

@@ -9,6 +9,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { Subscription } from 'rxjs';
 import { UserModel } from 'src/app/models/user.model';
 import { UserService } from 'src/app/services/user.service';
+import { AuthService } from 'src/app/services/auth-service.service';
 
 @Component({
   selector: 'app-reg-form',
@@ -21,20 +22,28 @@ export class RegFormComponent implements OnInit, OnDestroy {
   user?: UserModel;
   subUser?: Subscription;
   subRoute?: Subscription;
+  isLoggedIn: boolean | null = null;
+  private authSubscription: Subscription | null = null;
 
   get name(): AbstractControl | null {
     return this.userForm.get('name');
   }
+
   get email(): AbstractControl | null {
     return this.userForm.get('email');
   }
 
   submitUserForm() {
-    console.log('Form submitted'); // Added for debugging
+    console.log('Form submitted'); // Debugging célra
     if (!this.userForm.invalid) {
       const newUser: UserModel = this.userForm.value;
 
       if (this.id) {
+        if (!this.isLoggedIn) {
+          alert('You must be logged in to update a user.');
+          return;
+        }
+
         newUser.id = this.id;
         this.userService.updateUser(newUser).subscribe({
           complete: () => {
@@ -99,7 +108,8 @@ export class RegFormComponent implements OnInit, OnDestroy {
   constructor(
     private userService: UserService,
     private router: Router,
-    private activatedRoute: ActivatedRoute
+    private activatedRoute: ActivatedRoute,
+    private authService: AuthService
   ) {}
 
   ngOnInit(): void {
@@ -115,6 +125,17 @@ export class RegFormComponent implements OnInit, OnDestroy {
       ]),
     });
 
+    // AuthService subscription az bejelentkezett állapot figyelésére
+    this.authSubscription = this.authService.loggedInStatus$.subscribe(
+      (status) => {
+        this.isLoggedIn = status;
+        if (status === false) {
+          alert('You have been logged out. Please log in to continue.');
+          this.router.navigate(['login']); // Átirányít a bejelentkezési oldalra
+        }
+      }
+    );
+
     this.subRoute = this.activatedRoute.paramMap.subscribe((params) => {
       let readParam = params.get('id');
       if (readParam) {
@@ -123,7 +144,6 @@ export class RegFormComponent implements OnInit, OnDestroy {
         // Használja a getUsersWithGetDoc metódust
         this.subUser = this.userService.getUsersWithGetDoc().subscribe({
           next: (users: UserModel[]) => {
-            // Szűri a felhasználók listájából a megfelelő ID-hez tartozó felhasználót
             const user = users.find((u) => u.id === this.id);
             if (user) {
               this.user = user;
@@ -144,5 +164,8 @@ export class RegFormComponent implements OnInit, OnDestroy {
   ngOnDestroy(): void {
     this.subUser?.unsubscribe();
     this.subRoute?.unsubscribe();
+    if (this.authSubscription) {
+      this.authSubscription.unsubscribe();
+    }
   }
 }

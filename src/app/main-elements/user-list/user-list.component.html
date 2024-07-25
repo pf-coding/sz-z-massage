@@ -1,78 +1,187 @@
 <div class="container d-flex justify-content-center align-items-center vh-100">
-  <div class="card p-4 shadow w-100" style="max-width: 800px">
-    <div class="card-body">
-      <div class="row mb-3">
-        <div class="col-md-5 mb-2 mb-md-0">
-          <input
-            type="text"
-            class="form-control"
-            placeholder="Search by name"
-            [(ngModel)]="searchName"
-            (ngModelChange)="applyFilters()"
-          />
-        </div>
-        <div class="col-md-5 mb-2 mb-md-0">
-          <input
-            type="text"
-            class="form-control"
-            placeholder="Search by email"
-            [(ngModel)]="searchEmail"
-            (ngModelChange)="applyFilters()"
-          />
-        </div>
-        <div class="col-md-2 text-md-end">
-          <button class="btn btn-success w-100" (click)="exportToExcel()">
-            Export to Excel
-          </button>
+  <div class="row w-100">
+    <!-- Admin Registration Card -->
+    <div class="col-12 col-md-6 mb-4">
+      <div class="card p-4 shadow">
+        <div class="card-body">
+          <h5 class="card-title">Admin Regisztráció</h5>
+          <form [formGroup]="loginForm">
+            <div *ngIf="email" class="form-floating mb-3">
+              <input
+                formControlName="email"
+                class="form-control"
+                id="email"
+                type="email"
+                placeholder="E-mail cím"
+              />
+              <label for="email">Email</label>
+              <div
+                *ngIf="email.invalid && email.touched"
+                class="small text-danger"
+              >
+                <span *ngIf="email.touched"
+                  >Kérlek tölts ki az e-mail mezőt!</span
+                >
+                <span *ngIf="email.invalid">Nem érvényes e-mail cím!</span>
+              </div>
+            </div>
+
+            <div *ngIf="password" class="form-floating mb-3">
+              <input
+                formControlName="password"
+                class="form-control"
+                type="password"
+                id="password"
+                placeholder="Jelszó"
+              />
+              <label for="password">Jelszó</label>
+              <div
+                *ngIf="password.invalid && password.touched"
+                class="small text-danger"
+              >
+                Jelszó megadása kötelező!
+              </div>
+            </div>
+
+            <button
+              [disabled]="loginForm.invalid"
+              (click)="registration()"
+              class="btn btn-primary mt-2 w-100"
+              id="regButton"
+              type="submit"
+            >
+              Új admin regisztrálása
+            </button>
+          </form>
         </div>
       </div>
+    </div>
 
-      <table class="table table-dark table-hover">
-        <thead>
-          <tr>
-            <th scope="col" (click)="sortBy('index')">#</th>
-            <th scope="col" (click)="sortBy('name')">Name</th>
-            <th scope="col" (click)="sortBy('email')">Email</th>
-            <th scope="col">Select/Delete</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr *ngFor="let user of paginatedUsers; index as i">
-            <th scope="row">{{ i + 1 + (currentPage - 1) * pageSize }}</th>
-            <td>{{ user.name }}</td>
-            <td>{{ user.email }}</td>
-            <td>
-              <button class="btn btn-light" (click)="onSelect(user.id)">
-                Select
+    <!-- Users List Card -->
+    <div class="col-12 col-md-6 mb-4">
+      <div class="card p-4 shadow">
+        <div class="card-body">
+          <h5 class="card-title">
+            Hírlevélre feliratkozott felhasználók listája
+          </h5>
+          <div class="row mb-3">
+            <div class="col-md-6 mb-2 mb-md-0">
+              <input
+                type="text"
+                class="form-control"
+                placeholder="Keresés név alapján"
+                [(ngModel)]="searchName"
+                (ngModelChange)="applyFilters()"
+              />
+            </div>
+            <div class="col-md-6 mb-2 mb-md-0">
+              <input
+                type="text"
+                class="form-control"
+                placeholder="Keresés e-mail cím alapján"
+                [(ngModel)]="searchEmail"
+                (ngModelChange)="applyFilters()"
+              />
+            </div>
+          </div>
+
+          <div class="row mb-3">
+            <div class="col-md-6 mb-2 mb-md-0">
+              <button class="btn btn-success w-100" (click)="exportToExcel()">
+                Teljes adatbázis exportálása
               </button>
+            </div>
+            <div class="col-md-6 mb-2 mb-md-0">
               <button
-                *ngIf="user.id"
-                class="btn btn-danger ms-3"
-                (click)="onDelete(user.id)"
+                class="btn btn-warning w-100"
+                (click)="exportFilteredToExcel()"
               >
-                Delete
+                Szűrt lista exportálása
               </button>
-            </td>
-          </tr>
-        </tbody>
-      </table>
+            </div>
+          </div>
 
-      <div class="d-flex justify-content-between">
-        <button
-          class="btn btn-primary"
-          [disabled]="currentPage === 1"
-          (click)="previousPage()"
-        >
-          Previous
-        </button>
-        <span>Page {{ currentPage }} of {{ totalPages }}</span>
-        <button
-          class="btn btn-primary"
-          [disabled]="currentPage === totalPages"
-          (click)="nextPage()"
-        >
-          Next
-        </button>
+          <div class="row mb-3">
+            <div class="col-md-6 mb-2 mb-md-0">
+              <button class="btn btn-info w-100" (click)="refreshList()">
+                Lista frissítése
+              </button>
+            </div>
+            <div class="col-md-6 text-md-end">
+              <button class="btn btn-secondary w-100" (click)="goToHomePage()">
+                Vissza a főoldalra
+              </button>
+            </div>
+          </div>
+
+          <div class="table-responsive">
+            <table class="table table-dark table-hover table-sm">
+              <thead>
+                <tr>
+                  <th scope="col" (click)="sortBy('index')">#</th>
+                  <th scope="col" (click)="sortBy('name')">Név</th>
+                  <th
+                    scope="col"
+                    (click)="sortBy('email')"
+                    class="email-column"
+                  >
+                    Email
+                  </th>
+                  <th scope="col">Módosítás</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr *ngFor="let user of paginatedUsers; index as i">
+                  <th scope="row">
+                    {{ i + 1 + (currentPage - 1) * pageSize }}
+                  </th>
+                  <td>{{ user.name }}</td>
+                  <td class="email-column">{{ user.email }}</td>
+                  <td>
+                    <div class="d-flex flex-column flex-md-row gap-2">
+                      <button
+                        class="btn btn-light btn-sm"
+                        (click)="onSelect(user.id)"
+                      >
+                        Frissítés
+                      </button>
+                      <button
+                        *ngIf="user.id"
+                        class="btn btn-danger btn-sm"
+                        (click)="onDelete(user.id)"
+                      >
+                        Törlés
+                      </button>
+                    </div>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <div class="d-flex justify-content-between">
+            <button
+              class="btn btn-primary btn-sm"
+              [disabled]="currentPage === 1"
+              (click)="previousPage()"
+            >
+              Previous
+            </button>
+            <span>Page {{ currentPage }} of {{ totalPages }}</span>
+            <button
+              class="btn btn-primary btn-sm"
+              [disabled]="currentPage === totalPages"
+              (click)="nextPage()"
+            >
+              Next
+            </button>
+          </div>
+          <div class="col d-flex justify-content-center mt-5">
+            <button (click)="logout()" class="btn btn-danger" id="logoutButton">
+              Kijelentkezés
+            </button>
+          </div>
+        </div>
       </div>
     </div>
   </div>

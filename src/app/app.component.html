@@ -1,4 +1,4 @@
-<ng-container *ngIf="isUserPageActive === false">
+<ng-container *ngIf="!isAdminPageActive">
   <app-header></app-header>
 
   <ng-container *ngIf="isMassagePageActive">
@@ -17,9 +17,17 @@
   <app-footer></app-footer>
   <app-border-decor></app-border-decor>
   <app-cookie-notice></app-cookie-notice>
-  <a routerLink="users" class="btn btn-primary">View Users</a>
-  <a routerLink="regform" class="btn btn-primary">View Regform</a>
+
+  <ng-container *ngIf="isLoggedIn === false || isLoggedIn === null">
+    <app-sign-in></app-sign-in>
+  </ng-container>
+
+  <ng-container *ngIf="isLoggedIn === true">
+    <button (click)="logout()">Logout</button>
+    <button (click)="navigateToUsers()">Users Page</button>
+  </ng-container>
 </ng-container>
-<ng-container *ngIf="isUserPageActive === true">
+
+<ng-container *ngIf="isAdminPageActive">
   <router-outlet></router-outlet>
 </ng-container>
