@@ -1,56 +1,82 @@
-<div class="container d-flex justify-content-center align-items-center vh-100">
-  <div class="card p-4 shadow" style="max-width: 600px">
-    <div class="card-body">
-      <div class="text-center mb-4">
-        <h2>Feliratkozás a Hírlevélre</h2>
-        <p class="lead">
-          Iratkozzon fel hírlevelünkre és kapjon 10% kedvezményt az első
-          masszázs árából!
-        </p>
+<!-- Modal HTML -->
+<div
+  class="modal fade show d-block pt-5"
+  tabindex="-1"
+  role="dialog"
+  aria-labelledby="exampleModalLabel"
+  aria-hidden="true"
+  style="display: block"
+>
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="card p-4 shadow" style="max-width: 600px; width: 100%">
+        <div class="card-body">
+          <div class="card-body">
+            <div class="text-center mb-4">
+              <h2>Feliratkozás a Hírlevélre</h2>
+              <p class="lead">
+                Iratkozzon fel hírlevelünkre és kapjon 10% kedvezményt az első
+                masszázs árából!
+              </p>
+            </div>
+            <form
+              *ngIf="userForm"
+              class="row g-3"
+              [formGroup]="userForm"
+              (ngSubmit)="submitUserForm()"
+            >
+              <div class="col-md-6">
+                <label for="inputUsername" class="form-label">Teljes név</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="inputName"
+                  formControlName="name"
+                />
+                <small *ngIf="name?.invalid && name?.dirty" class="text-danger">
+                  A név hossza minimum 5, maximum 10 karakter lehet.
+                </small>
+              </div>
+              <div class="col-md-6">
+                <label for="inputEmail" class="form-label">E-mail címe</label>
+                <input
+                  type="email"
+                  class="form-control"
+                  id="inputEmail"
+                  formControlName="email"
+                />
+                <small
+                  *ngIf="email?.invalid && email?.dirty"
+                  class="text-danger"
+                >
+                  Kérem, adjon meg egy érvényes e-mail címet.
+                </small>
+              </div>
+              <div class="col-12 d-flex justify-content-between">
+                <button class="btn btn-primary">
+                  {{ id ? "Frissítés" : "Mentés" }}
+                </button>
+                <button
+                  *ngIf="user?.id"
+                  class="btn btn-danger"
+                  (click)="deleteUserFromList(id)"
+                >
+                  Törlés
+                </button>
+                <button
+                  type="button"
+                  class="close btn btn-danger"
+                  aria-label="Close"
+                  (click)="close()"
+                >
+                  Bezárás
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
       </div>
-      <form
-        *ngIf="userForm"
-        class="row g-3"
-        [formGroup]="userForm"
-        (ngSubmit)="submitUserForm()"
-      >
-        <div class="col-md-6">
-          <label for="inputUsername" class="form-label">Teljes név</label>
-          <input
-            type="text"
-            class="form-control"
-            id="inputName"
-            formControlName="name"
-          />
-          <small *ngIf="name?.invalid && name?.dirty" class="text-danger">
-            A név hossza minimum 5, maximum 10 karakter lehet.
-          </small>
-        </div>
-        <div class="col-md-6">
-          <label for="inputEmail" class="form-label">E-mail címe</label>
-          <input
-            type="email"
-            class="form-control"
-            id="inputEmail"
-            formControlName="email"
-          />
-          <small *ngIf="email?.invalid && email?.dirty" class="text-danger">
-            Kérem, adjon meg egy érvényes e-mail címet.
-          </small>
-        </div>
-        <div class="col-12 d-flex justify-content-between">
-          <button class="btn btn-primary">
-            {{ id ? "Frissítés" : "Mentés" }}
-          </button>
-          <button
-            *ngIf="user?.id"
-            class="btn btn-danger"
-            (click)="deleteUserFromList(id)"
-          >
-            Törlés
-          </button>
-        </div>
-      </form>
     </div>
   </div>
 </div>

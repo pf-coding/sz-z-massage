@@ -23,9 +23,25 @@
   </ng-container>
 
   <ng-container *ngIf="isLoggedIn === true">
-    <button (click)="logout()">Logout</button>
-    <button (click)="navigateToUsers()">Users Page</button>
+    <div class="container">
+      <div class="row">
+        <div class="col-12 p-4">
+          <div class="d-flex justify-content-between">
+            <button class="btn btn-success" (click)="logout()">
+              Kijelentkezés
+            </button>
+            <button class="btn btn-success" (click)="navigateToUsers()">
+              Admin panel
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
   </ng-container>
+  <app-reg-form
+    *ngIf="showModal"
+    (closeModal)="showModal = false"
+  ></app-reg-form>
 </ng-container>
 
 <ng-container *ngIf="isAdminPageActive">

@@ -11,6 +11,7 @@ import {
   Validators,
 } from '@angular/forms';
 import { AuthService } from 'src/app/services/auth-service.service';
+import { AdminService } from 'src/app/services/admin.service';
 
 @Component({
   selector: 'app-user-list',
@@ -40,14 +41,23 @@ export class UserListComponent implements OnInit {
   searchEmail: string = '';
   sortDirection: 'asc' | 'desc' = 'asc';
   sortKey: keyof UserModel | 'index' = 'index';
+  admins: any[] = []; // Az adminok tömbje
+
+  // Pagination variables for admin users
+  paginatedAdmins: any[] = [];
+  currentAdminPage: number = 1;
+  adminPageSize: number = 2;
+  totalAdminPages: number = 1;
 
   constructor(
     private userService: UserService,
     private router: Router,
-    private authService: AuthService
+    private authService: AuthService,
+    private adminService: AdminService
   ) {}
 
   ngOnInit(): void {
+    this.loadAdmins();
     this.userService.getUsersWithGetDoc().subscribe({
       next: (data: UserModel[]) => {
         this.users = data;
@@ -110,8 +120,33 @@ export class UserListComponent implements OnInit {
     }
 
     users.sort((a, b) => {
-      const compareA = a[this.sortKey] || '';
-      const compareB = b[this.sortKey] || '';
+      let compareA, compareB;
+
+      if (this.sortKey === 'date') {
+        const dateA =
+          a.year !== undefined &&
+          a.month !== undefined &&
+          a.day !== undefined &&
+          a.hour !== undefined &&
+          a.minute !== undefined
+            ? new Date(a.year, a.month - 1, a.day, a.hour, a.minute)
+            : new Date(0); // Default to epoch time if any part is undefined
+
+        const dateB =
+          b.year !== undefined &&
+          b.month !== undefined &&
+          b.day !== undefined &&
+          b.hour !== undefined &&
+          b.minute !== undefined
+            ? new Date(b.year, b.month - 1, b.day, b.hour, b.minute)
+            : new Date(0); // Default to epoch time if any part is undefined
+
+        compareA = dateA.getTime();
+        compareB = dateB.getTime();
+      } else {
+        compareA = a[this.sortKey] ?? ''; // Use empty string if undefined
+        compareB = b[this.sortKey] ?? ''; // Use empty string if undefined
+      }
 
       if (compareA < compareB) {
         return this.sortDirection === 'asc' ? -1 : 1;
@@ -121,9 +156,11 @@ export class UserListComponent implements OnInit {
       }
       return 0;
     });
+
+    this.paginateUsers(users); // Paginate after sorting
   }
 
-  sortBy(key: keyof UserModel | 'index') {
+  sortBy(key: keyof UserModel | 'index' | 'date') {
     if (this.sortKey === key) {
       this.sortDirection = this.sortDirection === 'asc' ? 'desc' : 'asc';
     } else {
@@ -198,8 +235,55 @@ export class UserListComponent implements OnInit {
   }
 
   public logout() {
-    this.authService.logout;
+    this.authService.logout();
     this.router.navigate(['/']);
+  }
+
+  loadAdmins(): void {
+    this.adminService.getAdmins().subscribe({
+      next: (data: any[]) => {
+        this.admins = data;
+        this.applyAdminFilters();
+      },
+      error: (error) => {
+        console.error('Error fetching admins:', error);
+      },
+    });
+  }
+
+  deleteAdmin(uid: string): void {
+    if (confirm('Are you sure you want to delete this admin?')) {
+      this.adminService.deleteAdmin(uid).subscribe(
+        () => {
+          this.admins = this.admins.filter((admin) => admin.uid !== uid);
+          this.applyAdminFilters();
+        },
+        (error) => {
+          console.error('Error deleting admin:', error);
+        }
+      );
+    }
+  }
+
+  applyAdminFilters() {
+    const startIndex = (this.currentAdminPage - 1) * this.adminPageSize;
+    const endIndex = startIndex + this.adminPageSize;
+    this.paginatedAdmins = this.admins.slice(startIndex, endIndex);
+    this.totalAdminPages = Math.ceil(this.admins.length / this.adminPageSize);
+  }
+
+  previousAdminPage() {
+    if (this.currentAdminPage > 1) {
+      this.currentAdminPage--;
+      this.applyAdminFilters();
+    }
+  }
+
+  nextAdminPage() {
+    if (this.currentAdminPage < this.totalAdminPages) {
+      this.currentAdminPage++;
+      this.applyAdminFilters();
+    }
   }
 }
 

@@ -1,20 +1,21 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { Router, NavigationEnd } from '@angular/router';
 import { CookieService } from './services/cookie.service';
 import { AuthService } from './services/auth-service.service';
-import { Subscription } from 'rxjs';
+import { Subscription, timer } from 'rxjs';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss'],
 })
-export class AppComponent implements OnInit {
+export class AppComponent implements OnInit, OnDestroy {
   title = 'sz-z-massage';
   isMassagePageActive = false;
   isAdminPageActive = false;
   isLoggedIn: boolean | null = null;
   private authSubscription: Subscription | null = null;
+  showModal = false;
 
   constructor(
     private router: Router,
@@ -24,19 +25,9 @@ export class AppComponent implements OnInit {
     this.router.events.subscribe((event) => {
       if (event instanceof NavigationEnd) {
         this.isMassagePageActive = this.router.url.includes('/massage-pages/');
+        this.isAdminPageActive = this.router.url.includes('users');
         console.log('isMassagePageActive:', this.isMassagePageActive);
-      }
-    });
-    this.router.events.subscribe((event) => {
-      if (event instanceof NavigationEnd) {
-        this.isAdminPageActive = this.router.url.includes('users');
-        console.log('isUserPageActive:', this.isAdminPageActive);
-      }
-    });
-    this.router.events.subscribe((event) => {
-      if (event instanceof NavigationEnd) {
-        this.isAdminPageActive = this.router.url.includes('users');
-        console.log('isUserPageActive:', this.isAdminPageActive);
+        console.log('isAdminPageActive:', this.isAdminPageActive);
       }
     });
   }
@@ -48,6 +39,10 @@ export class AppComponent implements OnInit {
         this.isLoggedIn = status;
       }
     );
+
+    // Show modal after 1 minute, then every 15 minutes
+    timer(8000).subscribe(() => (this.showModal = true));
+    timer(60000, 900000).subscribe(() => (this.showModal = true)); // 15 minutes interval
   }
 
   ngOnDestroy() {

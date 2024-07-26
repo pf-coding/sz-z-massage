@@ -47,11 +47,12 @@ export class AuthService {
       createUserWithEmailAndPassword(this.auth, regData.email, regData.password)
     ).pipe(
       tap((userCredential) => {
-        console.log('User data: ', userCredential);
-        this.loggedInStatus.next(true);
-        localStorage.setItem('isLoggedIn', 'true');
-        localStorage.setItem('userEmail', regData.email);
-        alert('Successfully registered a new admin!');
+        console.log('User registered: ', userCredential);
+        // Comment out or remove the following lines to avoid auto-login
+        // this.loggedInStatus.next(true);
+        // localStorage.setItem('isLoggedIn', 'true');
+        // localStorage.setItem('userEmail', regData.email);
+        alert('Successfully registered a new admin! Please log in.');
       }),
       catchError((error) => {
         alert(error.message);
@@ -65,7 +66,7 @@ export class AuthService {
       signInWithEmailAndPassword(this.auth, loginData.email, loginData.password)
     ).pipe(
       tap((userCredential) => {
-        console.log('User data: ', userCredential);
+        console.log('User logged in: ', userCredential);
         this.loggedInStatus.next(true);
         localStorage.setItem('isLoggedIn', 'true');
         localStorage.setItem('userEmail', loginData.email);

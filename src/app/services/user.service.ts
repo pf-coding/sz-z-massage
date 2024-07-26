@@ -31,6 +31,16 @@ export class UserService {
         const resultList = snapshot.docs.map((doc) => {
           const userData: UserModel = doc.data() as UserModel;
           userData.id = doc.id;
+          if (userData.timestamp) {
+            const timestampDate = this.convertTimestamp(userData.timestamp);
+            userData.timestampDate = timestampDate;
+            userData.year = timestampDate.getFullYear();
+            userData.month = timestampDate.getMonth() + 1; // Months are zero-indexed
+            userData.day = timestampDate.getDate();
+            userData.hour = timestampDate.getHours();
+            userData.minute = timestampDate.getMinutes();
+            userData.second = timestampDate.getSeconds();
+          }
           return userData;
         });
         return resultList;
@@ -51,5 +61,12 @@ export class UserService {
   deleteUser(id: string): Observable<void> {
     const userDoc = doc(this.firestore, `users/${id}`);
     return from(deleteDoc(userDoc));
+  }
+
+  private convertTimestamp(timestamp: {
+    seconds: number;
+    nanoseconds: number;
+  }): Date {
+    return new Date(timestamp.seconds * 1000 + timestamp.nanoseconds / 1000000);
   }
 }

@@ -1,4 +1,10 @@
-import { Component, OnDestroy, OnInit } from '@angular/core';
+import {
+  Component,
+  OnDestroy,
+  OnInit,
+  Output,
+  EventEmitter,
+} from '@angular/core';
 import {
   AbstractControl,
   FormControl,
@@ -25,6 +31,8 @@ export class RegFormComponent implements OnInit, OnDestroy {
   isLoggedIn: boolean | null = null;
   private authSubscription: Subscription | null = null;
 
+  @Output() closeModal: EventEmitter<void> = new EventEmitter<void>();
+
   get name(): AbstractControl | null {
     return this.userForm.get('name');
   }
@@ -34,29 +42,49 @@ export class RegFormComponent implements OnInit, OnDestroy {
   }
 
   submitUserForm() {
-    console.log('Form submitted'); // Debugging célra
+    console.log('Form submitted'); // Debugging purpose
     if (!this.userForm.invalid) {
       const newUser: UserModel = this.userForm.value;
 
       if (this.id) {
+        // Update operation
         if (!this.isLoggedIn) {
           alert('You must be logged in to update a user.');
           return;
         }
 
-        newUser.id = this.id;
-        this.userService.updateUser(newUser).subscribe({
-          complete: () => {
-            this.router.navigate(['users']);
+        // Use existing timestamp if available
+        this.userService.getUsersWithGetDoc().subscribe({
+          next: (users: UserModel[]) => {
+            const existingUser = users.find((u) => u.id === this.id);
+            if (existingUser) {
+              // Preserve the existing timestamp
+              newUser.timestamp = existingUser.timestamp;
+              newUser.id = this.id;
+
+              this.userService.updateUser(newUser).subscribe({
+                complete: () => {
+                  this.router.navigate(['users']);
+                  this.closeModal.emit(); // Emit close event after update
+                },
+                error: (err) => {
+                  console.error('Error updating user:', err);
+                  alert(
+                    'An error occurred while updating the user. Please try again.'
+                  );
+                },
+              });
+            } else {
+              alert('User not found.');
+            }
           },
           error: (err) => {
-            console.error('Error updating user:', err);
-            alert(
-              'An error occurred while updating the user. Please try again.'
-            );
+            console.error('Error fetching users:', err);
+            alert('An error occurred while fetching users. Please try again.');
           },
         });
       } else {
+        // Create operation
         this.userService.getUsersWithGetDoc().subscribe({
           next: (users: UserModel[]) => {
             const userWithEmail = users.find((u) => u.email === newUser.email);
@@ -65,11 +93,13 @@ export class RegFormComponent implements OnInit, OnDestroy {
                 'This email address is already in use. Please use a different email.'
               );
             } else {
+              newUser.timestamp = this.dateToFirestoreTimestamp(new Date());
               this.userService.addUser(newUser).subscribe({
                 next: (docRef) => {
                   console.log('User saved with ID: ', docRef['id']);
                   alert('User added successfully!');
                   this.userForm.reset();
+                  this.closeModal.emit(); // Emit close event after add
                 },
                 error: (err) => {
                   console.error('Error adding user:', err);
@@ -91,11 +121,21 @@ export class RegFormComponent implements OnInit, OnDestroy {
     }
   }
 
+  dateToFirestoreTimestamp(date: Date): {
+    seconds: number;
+    nanoseconds: number;
+  } {
+    const seconds = Math.floor(date.getTime() / 1000);
+    const nanoseconds = (date.getTime() % 1000) * 1000000;
+    return { seconds, nanoseconds };
+  }
+
   deleteUserFromList(id?: string): void {
     if (id && confirm(`Are you sure to delete this user from the list?`)) {
       this.userService.deleteUser(id).subscribe({
         complete: () => {
           this.router.navigate(['users']);
+          this.closeModal.emit(); // Emit close event after delete
         },
         error: (err) => {
           console.error('Error deleting user:', err);
@@ -129,10 +169,6 @@ export class RegFormComponent implements OnInit, OnDestroy {
     this.authSubscription = this.authService.loggedInStatus$.subscribe(
       (status) => {
         this.isLoggedIn = status;
-        if (status === false) {
-          alert('You have been logged out. Please log in to continue.');
-          this.router.navigate(['login']); // Átirányít a bejelentkezési oldalra
-        }
       }
     );
 
@@ -159,6 +195,10 @@ export class RegFormComponent implements OnInit, OnDestroy {
         });
       }
     });
+  }
+
+  close() {
+    this.closeModal.emit(); // Emit close event when manually closing
   }
 
   ngOnDestroy(): void {

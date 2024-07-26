@@ -1,8 +1,10 @@
-<div class="container d-flex justify-content-center align-items-center vh-100">
-  <div class="row w-100">
+<div
+  class="container d-flex flex-column justify-content-center align-items-center vh-100 formobile-padding"
+>
+  <div class="row w-100 mb-4">
     <!-- Admin Registration Card -->
     <div class="col-12 col-md-6 mb-4">
-      <div class="card p-4 shadow">
+      <div class="card p-3 shadow">
         <div class="card-body">
           <h5 class="card-title">Admin Regisztráció</h5>
           <form [formGroup]="loginForm">
@@ -25,7 +27,6 @@
                 <span *ngIf="email.invalid">Nem érvényes e-mail cím!</span>
               </div>
             </div>
-
             <div *ngIf="password" class="form-floating mb-3">
               <input
                 formControlName="password"
@@ -42,11 +43,10 @@
                 Jelszó megadása kötelező!
               </div>
             </div>
-
             <button
               [disabled]="loginForm.invalid"
               (click)="registration()"
-              class="btn btn-primary mt-2 w-100"
+              class="button-custom mt-2 w-100"
               id="regButton"
               type="submit"
             >
@@ -57,15 +57,72 @@
       </div>
     </div>
 
-    <!-- Users List Card -->
+    <!-- Admin Users List Card -->
     <div class="col-12 col-md-6 mb-4">
-      <div class="card p-4 shadow">
+      <div class="card p-3 shadow">
+        <div class="card-body">
+          <h5 class="card-title">Admin Felhasználók Listája</h5>
+          <div class="table-responsive">
+            <table class="table table-hover table-sm">
+              <thead class="text-nowrap">
+                <tr>
+                  <th scope="col">#</th>
+                  <th scope="col">Email</th>
+                  <th scope="col">Legutóbb itt járt</th>
+                  <th scope="col">Törlés</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr *ngFor="let admin of paginatedAdmins; index as i">
+                  <th scope="row">
+                    {{ i + 1 + (currentAdminPage - 1) * adminPageSize }}
+                  </th>
+                  <td>{{ admin.email }}</td>
+                  <td>{{ admin.metadata.lastSignInTime }}</td>
+                  <td>
+                    <button
+                      class="button-custom btn-sm"
+                      (click)="deleteAdmin(admin.uid)"
+                    >
+                      Törlés
+                    </button>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="d-flex justify-content-between">
+            <button
+              class="button-custom btn-sm"
+              [disabled]="currentAdminPage === 1"
+              (click)="previousAdminPage()"
+            >
+              Previous
+            </button>
+            <span>Page {{ currentAdminPage }} of {{ totalAdminPages }}</span>
+            <button
+              class="button-custom btn-sm"
+              [disabled]="currentAdminPage === totalAdminPages"
+              (click)="nextAdminPage()"
+            >
+              Next
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Newsletter Subscribers Card -->
+  <div class="row w-100">
+    <div class="col-12">
+      <div class="card p-3 shadow">
         <div class="card-body">
           <h5 class="card-title">
             Hírlevélre feliratkozott felhasználók listája
           </h5>
           <div class="row mb-3">
-            <div class="col-md-6 mb-2 mb-md-0">
+            <div class="col-md-6 mb-2">
               <input
                 type="text"
                 class="form-control"
@@ -74,7 +131,7 @@
                 (ngModelChange)="applyFilters()"
               />
             </div>
-            <div class="col-md-6 mb-2 mb-md-0">
+            <div class="col-md-6 mb-2">
               <input
                 type="text"
                 class="form-control"
@@ -84,39 +141,36 @@
               />
             </div>
           </div>
-
           <div class="row mb-3">
-            <div class="col-md-6 mb-2 mb-md-0">
-              <button class="btn btn-success w-100" (click)="exportToExcel()">
+            <div class="col-md-6 mb-2">
+              <button class="button-custom w-100" (click)="exportToExcel()">
                 Teljes adatbázis exportálása
               </button>
             </div>
-            <div class="col-md-6 mb-2 mb-md-0">
+            <div class="col-md-6 mb-2">
               <button
-                class="btn btn-warning w-100"
+                class="button-custom w-100"
                 (click)="exportFilteredToExcel()"
               >
                 Szűrt lista exportálása
               </button>
             </div>
           </div>
-
           <div class="row mb-3">
-            <div class="col-md-6 mb-2 mb-md-0">
-              <button class="btn btn-info w-100" (click)="refreshList()">
+            <div class="col-md-6 mb-2">
+              <button class="button-custom w-100" (click)="refreshList()">
                 Lista frissítése
               </button>
             </div>
             <div class="col-md-6 text-md-end">
-              <button class="btn btn-secondary w-100" (click)="goToHomePage()">
+              <button class="button-custom w-100" (click)="goToHomePage()">
                 Vissza a főoldalra
               </button>
             </div>
           </div>
-
           <div class="table-responsive">
-            <table class="table table-dark table-hover table-sm">
-              <thead>
+            <table class="table table-hover table-sm">
+              <thead class="text-nowrap">
                 <tr>
                   <th scope="col" (click)="sortBy('index')">#</th>
                   <th scope="col" (click)="sortBy('name')">Név</th>
@@ -127,6 +181,9 @@
                   >
                     Email
                   </th>
+                  <th scope="col" (click)="sortBy('date')">
+                    Feliratkozás dátuma
+                  </th>
                   <th scope="col">Módosítás</th>
                 </tr>
               </thead>
@@ -136,18 +193,22 @@
                     {{ i + 1 + (currentPage - 1) * pageSize }}
                   </th>
                   <td>{{ user.name }}</td>
-                  <td class="email-column">{{ user.email }}</td>
+                  <td>{{ user.email }}</td>
+                  <td>
+                    {{ user.year }}.{{ user.month }}.{{ user.day }} -
+                    {{ user.hour }}:{{ user.minute }}
+                  </td>
                   <td>
                     <div class="d-flex flex-column flex-md-row gap-2">
                       <button
-                        class="btn btn-light btn-sm"
+                        class="button-custom btn-sm"
                         (click)="onSelect(user.id)"
                       >
                         Frissítés
                       </button>
                       <button
                         *ngIf="user.id"
-                        class="btn btn-danger btn-sm"
+                        class="button-custom btn-sm"
                         (click)="onDelete(user.id)"
                       >
                         Törlés
@@ -158,10 +219,9 @@
               </tbody>
             </table>
           </div>
-
           <div class="d-flex justify-content-between">
             <button
-              class="btn btn-primary btn-sm"
+              class="button-custom btn-sm"
               [disabled]="currentPage === 1"
               (click)="previousPage()"
             >
@@ -169,7 +229,7 @@
             </button>
             <span>Page {{ currentPage }} of {{ totalPages }}</span>
             <button
-              class="btn btn-primary btn-sm"
+              class="button-custom btn-sm"
               [disabled]="currentPage === totalPages"
               (click)="nextPage()"
             >
@@ -177,7 +237,7 @@
             </button>
           </div>
           <div class="col d-flex justify-content-center mt-5">
-            <button (click)="logout()" class="btn btn-danger" id="logoutButton">
+            <button (click)="logout()" class="button-custom" id="logoutButton">
               Kijelentkezés
             </button>
           </div>

@@ -2,5 +2,13 @@ export interface UserModel {
   id?: string;
   name: string;
   email: string;
-  [key: string]: any; // Ez lehetővé teszi, hogy további mezők is jelen legyenek
+  timestamp?: { seconds: number; nanoseconds: number }; // Firestore timestamp format
+  timestampDate?: Date; // JavaScript Date format
+  year?: number;
+  month?: number;
+  day?: number;
+  hour?: number;
+  minute?: number;
+  second?: number;
+  [key: string]: any; // This allows additional fields
 }
