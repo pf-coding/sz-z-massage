@@ -1,109 +1,102 @@
-@import 'src/styles.scss';
-
+@import "src/styles.scss";
 
 .modal-content {
-    background-color: #f8f9fa; /* Háttérszín */
-    border-radius: 10px; /* Lekerekített sarkok */
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1); /* Árnyék */
-  }
-  
-  .modal-header {
-    border-bottom: none; /* Fejléc alsó határvonala eltávolítása */
-  }
-  
-  .modal-title {
-    color: #343a40; /* Fejléc színe */
-  }
-  
-  .modal-body {
-    color: #6c757d; /* Szöveg színe */
-  }
-  
-  .modal-footer {
-    border-top: none; /* Lábléc felső határvonala eltávolítása */
-  }
-  
-  .form-check-input {
-    margin-top: 0.2rem; /* Checkbox-ok margója */
-  }
-  
-  .cookie-description {
-    margin-top: 0.2rem; /* Cookie leírás margója */
-    color: #6c757d; /* Cookie leírás szöveg színe */
-    font-size: 0.875rem; /* Cookie leírás betűméret */
-  }
-  
-  .switch {
-    display: none;
-  }
-  
-  .switch + .form-check-label {
-    position: relative;
-    display: inline-block;
-    vertical-align: middle;
-    margin-bottom: 0;
-    cursor: pointer;
-    padding-left: 40px; /* Növelt padding bal oldalt */
-  }
-  
-  .switch + .form-check-label::before,
-  .switch + .form-check-label::after {
-    content: '';
-    position: absolute;
-    left: 0;
-    top: 0;
-    bottom: 0;
-    margin: auto;
-  }
-  
-  .switch + .form-check-label::before {
-    width: 36px; /* Növelt szélesség */
-    height: 20px; /* Növelt magasság */
-    background-color: #ccc;
-    border-radius: 10px; /* Növelt border-radius */
-    transition: background-color 0.3s;
-  }
-  
-  .switch + .form-check-label::after {
-    width: 14px; /* Növelt átmérő */
-    height: 14px; /* Növelt átmérő */
-    background-color: #fff;
-    border-radius: 50%;
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.4);
-    transition: left 0.3s, background-color 0.3s;
-  }
-  
-  .switch:checked + .form-check-label::before {
-    background-color: #9fd6ae;
-  }
-  
-  .switch:checked + .form-check-label::after {
-    left: 18px; /* Mozgatott pozíció */
-  }
-  
-  
+  background-color: #f8f9fa; /* Háttérszín */
+  border-radius: 10px; /* Lekerekített sarkok */
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1); /* Árnyék */
+}
 
-  
-  
-  // Szükséges sütik betűmérete és formázása
-  .text-start {
-    text-align: left !important; /* Balra zárt szöveg */
-    font-size: 1.3rem; /* Nagyobb betűméret */
-    font-weight: bold; /* Félkövér betűtípus */
-  }
+.modal-header {
+  border-bottom: none; /* Fejléc alsó határvonala eltávolítása */
+}
 
-  .text-description {
-    text-align: justify !important; /* Balra zárt szöveg */
-    font-size: 1.0rem; /* Nagyobb betűméret */
-  }
+.modal-title {
+  color: #343a40; /* Fejléc színe */
+}
 
-  .text-start-other {
-    text-align: left !important; /* Balra zárt szöveg */
-    font-size: 1rem; /* kisebb betűméret */
-  }
-  
-  .cookie-notice button {
-    margin-left: 15px;
-    padding: 5px 10px;
-  }
-  
+.modal-body {
+  color: #6c757d; /* Szöveg színe */
+}
+
+.modal-footer {
+  border-top: none; /* Lábléc felső határvonala eltávolítása */
+}
+
+.form-check-input {
+  margin-top: 0.2rem; /* Checkbox-ok margója */
+}
+
+.cookie-description {
+  margin-top: 0.2rem; /* Cookie leírás margója */
+  color: #6c757d; /* Cookie leírás szöveg színe */
+  font-size: 0.875rem; /* Cookie leírás betűméret */
+}
+
+.switch {
+  display: none;
+}
+
+.switch + .form-check-label {
+  position: relative;
+  display: inline-block;
+  vertical-align: middle;
+  margin-bottom: 0;
+  cursor: pointer;
+  padding-left: 40px; /* Növelt padding bal oldalt */
+}
+
+.switch + .form-check-label::before,
+.switch + .form-check-label::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+}
+
+.switch + .form-check-label::before {
+  width: 36px; /* Növelt szélesség */
+  height: 20px; /* Növelt magasság */
+  background-color: #ccc;
+  border-radius: 10px; /* Növelt border-radius */
+  transition: background-color 0.3s;
+}
+
+.switch + .form-check-label::after {
+  width: 14px; /* Növelt átmérő */
+  height: 14px; /* Növelt átmérő */
+  background-color: #fff;
+  border-radius: 50%;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.4);
+  transition: left 0.3s, background-color 0.3s;
+}
+
+.switch:checked + .form-check-label::before {
+  background-color: #9fd6ae;
+}
+
+.switch:checked + .form-check-label::after {
+  left: 18px; /* Mozgatott pozíció */
+}
+
+// Szükséges sütik betűmérete és formázása
+.text-start {
+  text-align: left !important; /* Balra zárt szöveg */
+  font-size: 1.3rem; /* Nagyobb betűméret */
+  font-weight: bold; /* Félkövér betűtípus */
+}
+
+.text-description {
+  text-align: justify !important; /* Balra zárt szöveg */
+  font-size: 1rem; /* Nagyobb betűméret */
+}
+
+.text-start-other {
+  text-align: left !important; /* Balra zárt szöveg */
+  font-size: 1rem; /* kisebb betűméret */
+}
+
+.cookie-notice button {
+  padding: 5px 10px;
+}

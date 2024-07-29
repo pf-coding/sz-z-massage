@@ -26,8 +26,6 @@ export class AppComponent implements OnInit, OnDestroy {
       if (event instanceof NavigationEnd) {
         this.isMassagePageActive = this.router.url.includes('/massage-pages/');
         this.isAdminPageActive = this.router.url.includes('users');
-        console.log('isMassagePageActive:', this.isMassagePageActive);
-        console.log('isAdminPageActive:', this.isAdminPageActive);
       }
     });
   }

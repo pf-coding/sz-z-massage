@@ -24,6 +24,7 @@ import { initializeApp, provideFirebaseApp } from '@angular/fire/app';
 import { provideFirestore, getFirestore } from '@angular/fire/firestore';
 import { UsersComponent } from './main-elements/users/users.component';
 import { SignInComponent } from './main-elements/sign-in/sign-in.component';
+import { PageNotFoundComponent } from './main-elements/page-not-found/page-not-found.component';
 
 @NgModule({
   declarations: [
@@ -42,6 +43,7 @@ import { SignInComponent } from './main-elements/sign-in/sign-in.component';
     UserListComponent,
     UsersComponent,
     SignInComponent,
+    PageNotFoundComponent,
   ],
   imports: [
     BrowserModule,

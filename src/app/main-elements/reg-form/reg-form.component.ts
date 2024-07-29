@@ -196,9 +196,14 @@ export class RegFormComponent implements OnInit, OnDestroy {
       }
     });
   }
-
   close() {
-    this.closeModal.emit(); // Emit close event when manually closing
+    const modal = document.querySelector('.modal');
+
+    if (modal) {
+      modal.classList.remove('show');
+      modal.classList.add('hide');
+      this.closeModal.emit();
+    }
   }
 
   ngOnDestroy(): void {

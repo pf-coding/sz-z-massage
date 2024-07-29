@@ -1,0 +1,27 @@
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+.modal.fade.show {
+  display: block;
+  animation: fadeIn 0.5s forwards;
+}
+
+.modal.fade.hide {
+  animation: fadeOut 0.5s forwards;
+  display: none; // Ensure the modal is hidden after the animation
+}

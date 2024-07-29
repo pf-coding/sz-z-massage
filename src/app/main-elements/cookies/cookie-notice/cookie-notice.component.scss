@@ -1,20 +1,18 @@
 .cookie-notice {
-    position: fixed;
-    bottom: 0;
-    width: 100%;
-    background-color: #f1f1f1;
-    padding: 10px;
-    text-align: center;
-    box-shadow: 0px -2px 5px rgba(0,0,0,0.1);
-  }
-  
-  .cookie-notice p {
-    margin: 0;
-    display: inline-block;
-  }
-  
-  .cookie-notice button {
-    margin-left: 15px;
-    padding: 5px 10px;
-  }
-  
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  background-color: #f1f1f1;
+  padding: 10px;
+  text-align: center;
+  box-shadow: 0px -2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.cookie-notice p {
+  margin: 0;
+  display: inline-block;
+}
+
+.cookie-notice button {
+  padding: 5px 10px;
+}

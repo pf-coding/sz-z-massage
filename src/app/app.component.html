@@ -44,6 +44,6 @@
   ></app-reg-form>
 </ng-container>
 
-<ng-container *ngIf="isAdminPageActive">
+<ng-container *ngIf="isAdminPageActive && isLoggedIn === true">
   <router-outlet></router-outlet>
 </ng-container>
