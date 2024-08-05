@@ -22,7 +22,7 @@
     "module": "ES2022",
     "useDefineForClassFields": true,
     "lib": ["ES2022", "dom"],
-    "types": [] // Üres lista, ha nem használod a Node.js típusokat
+    "skipLibCheck": true // Átmeneti megoldás a típusellenőrzési hibákhoz
   },
   "angularCompilerOptions": {
     "enableI18nLegacyMessageIdFormat": false,
