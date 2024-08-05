@@ -25,6 +25,7 @@ import { provideFirestore, getFirestore } from '@angular/fire/firestore';
 import { UsersComponent } from './main-elements/users/users.component';
 import { SignInComponent } from './main-elements/sign-in/sign-in.component';
 import { PageNotFoundComponent } from './main-elements/page-not-found/page-not-found.component';
+import { AuthService } from './services/auth-service.service';
 
 @NgModule({
   declarations: [
@@ -57,7 +58,7 @@ import { PageNotFoundComponent } from './main-elements/page-not-found/page-not-f
     provideAuth(() => getAuth()),
     provideFirestore(() => getFirestore()),
   ],
-  providers: [],
+  providers: [AuthService],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
