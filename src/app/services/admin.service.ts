@@ -6,7 +6,7 @@ import { Observable } from 'rxjs';
   providedIn: 'root',
 })
 export class AdminService {
-  private apiUrl = 'http://localhost:3000/users';
+  private apiUrl = 'https://sz-z-massage-backend-server.onrender.com/users';
   constructor(private http: HttpClient) {}
 
   // Adminok lekérdezése
@@ -14,8 +14,8 @@ export class AdminService {
     return this.http.get<any[]>(this.apiUrl);
   }
 
-   // Admin törlése
-   deleteAdmin(uid: string): Observable<void> {
+  // Admin törlése
+  deleteAdmin(uid: string): Observable<void> {
     return this.http.delete<void>(`${this.apiUrl}/${uid}`);
   }
 }
