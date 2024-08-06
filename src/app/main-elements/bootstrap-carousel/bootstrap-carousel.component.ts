@@ -7,8 +7,10 @@ import { Component } from '@angular/core';
 })
 export class BootstrapCarouselComponent {
   images: string[] = [
-    './assets/social-pictures/fbbanner.png',
-    './assets/social-pictures/fbbanner2.png',
+    './assets/caroussel-one.png',
+    './assets/caroussel-one.png',
+    './assets/caroussel-one.png',
+    './assets/caroussel-one.png',
     // 'https://images.squarespace-cdn.com/content/v1/65413326a121b718285bb2ab/42284538-b535-48c8-b0c8-195a6543558c/Brown+Blue+Denim+Jeans+Fashion+Sale+Website+Banner.png',
     // 'https://images.squarespace-cdn.com/content/v1/65413326a121b718285bb2ab/42284538-b535-48c8-b0c8-195a6543558c/Brown+Blue+Denim+Jeans+Fashion+Sale+Website+Banner.png',
   ];
