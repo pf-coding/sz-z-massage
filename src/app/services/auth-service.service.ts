@@ -85,7 +85,6 @@ export class AuthService {
     this.userEmail.next(null);
     localStorage.removeItem('isLoggedIn');
     localStorage.removeItem('userEmail');
-    this.router.navigate(['/login']); // Navigate to login page
   }
 
   checkAuthState(): void {

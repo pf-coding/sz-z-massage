@@ -97,7 +97,6 @@ export class RegFormComponent implements OnInit, OnDestroy {
               this.userService.addUser(newUser).subscribe({
                 next: (docRef) => {
                   console.log('User saved with ID: ', docRef['id']);
-                  alert('User added successfully!');
                   this.userForm.reset();
                   this.closeModal.emit(); // Emit close event after add
                 },
