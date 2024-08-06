@@ -15,7 +15,7 @@ import { CookieNoticeComponent } from './main-elements/cookies/cookie-notice/coo
 import { CookieCustomizationModalComponent } from './main-elements/cookies/cookie-customization-modal/cookie-customization-modal.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { BorderDecorComponent } from './main-elements/border-decor/border-decor.component';
-import { environment } from '../environments/environment';
+import { environment } from 'src/environments/environment.prod';
 import { RegFormComponent } from './main-elements/reg-form/reg-form.component';
 import { RouterModule } from '@angular/router';
 import { UserListComponent } from './main-elements/user-list/user-list.component';
