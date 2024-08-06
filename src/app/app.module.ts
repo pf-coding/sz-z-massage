@@ -26,7 +26,6 @@ import { UsersComponent } from './main-elements/users/users.component';
 import { SignInComponent } from './main-elements/sign-in/sign-in.component';
 import { PageNotFoundComponent } from './main-elements/page-not-found/page-not-found.component';
 import { AuthService } from './services/auth-service.service';
-import { FirebaseService } from './services/firebase-service.service';
 
 @NgModule({
   declarations: [
@@ -60,7 +59,7 @@ import { FirebaseService } from './services/firebase-service.service';
     provideAuth(() => getAuth()),
     provideFirestore(() => getFirestore()),
   ],
-  providers: [FirebaseService, AuthService],
+  providers: [AuthService],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

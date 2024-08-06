@@ -7,7 +7,8 @@ import {
   signOut,
 } from '@angular/fire/auth';
 import { Router } from '@angular/router';
-import { BehaviorSubject, Observable, from, catchError, tap } from 'rxjs';
+import { BehaviorSubject, Observable, from, EMPTY } from 'rxjs';
+import { catchError, tap } from 'rxjs/operators';
 
 interface UserAuthData {
   email: string;
@@ -21,14 +22,13 @@ export class AuthService {
   private loggedInStatus: BehaviorSubject<boolean | null> = new BehaviorSubject<
     boolean | null
   >(null);
+  private userEmail: BehaviorSubject<string | null> = new BehaviorSubject<
+    string | null
+  >(null);
 
   public get loggedInStatus$(): Observable<boolean | null> {
     return this.loggedInStatus.asObservable();
   }
-
-  private userEmail: BehaviorSubject<string | null> = new BehaviorSubject<
-    string | null
-  >(null);
 
   public get userEmail$(): Observable<string | null> {
     return this.userEmail.asObservable();
@@ -56,9 +56,9 @@ export class AuthService {
       }),
       catchError((error) => {
         alert(error.message);
-        return error;
+        return EMPTY;
       })
-    ) as Observable<UserCredential>;
+    );
   }
 
   login(loginData: UserAuthData): Observable<UserCredential> {
@@ -74,9 +74,9 @@ export class AuthService {
       }),
       catchError((error) => {
         alert(error.message);
-        return error;
+        return EMPTY;
       })
-    ) as Observable<UserCredential>;
+    );
   }
 
   async logout(): Promise<void> {
@@ -85,6 +85,7 @@ export class AuthService {
     this.userEmail.next(null);
     localStorage.removeItem('isLoggedIn');
     localStorage.removeItem('userEmail');
+    this.router.navigate(['/login']); // Navigate to login page
   }
 
   checkAuthState(): void {
@@ -99,11 +100,12 @@ export class AuthService {
       this.userEmail.next(null);
     }
 
+    // Listen to Firebase auth state changes
     this.auth.onAuthStateChanged((user) => {
       if (user) {
         console.log('User on init: ', user);
         this.loggedInStatus.next(true);
-        this.userEmail.next(user.email);
+        this.userEmail.next(user.email || null);
         localStorage.setItem('isLoggedIn', 'true');
         localStorage.setItem('userEmail', user.email || '');
       } else {
