@@ -18,6 +18,7 @@ import { BorderDecorComponent } from './main-elements/border-decor/border-decor.
 import { environment } from '../environments/environment';
 import { RegFormComponent } from './main-elements/reg-form/reg-form.component';
 import { RouterModule } from '@angular/router';
+import { UserListComponent } from './main-elements/user-list/user-list.component';
 import { provideAuth, getAuth } from '@angular/fire/auth';
 import { initializeApp, provideFirebaseApp } from '@angular/fire/app';
 import { provideFirestore, getFirestore } from '@angular/fire/firestore';
@@ -41,6 +42,7 @@ import { FirebaseService } from './services/firebase-service.service';
     CookieCustomizationModalComponent,
     BorderDecorComponent,
     RegFormComponent,
+    UserListComponent,
     UsersComponent,
     SignInComponent,
     PageNotFoundComponent,
