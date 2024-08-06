@@ -26,6 +26,7 @@ import { UsersComponent } from './main-elements/users/users.component';
 import { SignInComponent } from './main-elements/sign-in/sign-in.component';
 import { PageNotFoundComponent } from './main-elements/page-not-found/page-not-found.component';
 import { AuthService } from './services/auth-service.service';
+import { firebaseConfig } from 'firebase-init';
 
 @NgModule({
   declarations: [
@@ -55,7 +56,7 @@ import { AuthService } from './services/auth-service.service';
     FormsModule,
     FontAwesomeModule,
 
-    provideFirebaseApp(() => initializeApp(environment.firebase)),
+    provideFirebaseApp(() => initializeApp(firebaseConfig)),
     provideAuth(() => getAuth()),
     provideFirestore(() => getFirestore()),
   ],
