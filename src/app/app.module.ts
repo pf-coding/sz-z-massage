@@ -18,7 +18,6 @@ import { BorderDecorComponent } from './main-elements/border-decor/border-decor.
 import { environment } from '../environments/environment';
 import { RegFormComponent } from './main-elements/reg-form/reg-form.component';
 import { RouterModule } from '@angular/router';
-import { UserListComponent } from './main-elements/user-list/user-list.component';
 import { provideAuth, getAuth } from '@angular/fire/auth';
 import { initializeApp, provideFirebaseApp } from '@angular/fire/app';
 import { provideFirestore, getFirestore } from '@angular/fire/firestore';
@@ -26,6 +25,7 @@ import { UsersComponent } from './main-elements/users/users.component';
 import { SignInComponent } from './main-elements/sign-in/sign-in.component';
 import { PageNotFoundComponent } from './main-elements/page-not-found/page-not-found.component';
 import { AuthService } from './services/auth-service.service';
+import { FirebaseService } from './services/firebase-service.service';
 
 @NgModule({
   declarations: [
@@ -41,7 +41,6 @@ import { AuthService } from './services/auth-service.service';
     CookieCustomizationModalComponent,
     BorderDecorComponent,
     RegFormComponent,
-    UserListComponent,
     UsersComponent,
     SignInComponent,
     PageNotFoundComponent,
@@ -54,11 +53,12 @@ import { AuthService } from './services/auth-service.service';
     HttpClientModule,
     FormsModule,
     FontAwesomeModule,
+
     provideFirebaseApp(() => initializeApp(environment.firebase)),
     provideAuth(() => getAuth()),
     provideFirestore(() => getFirestore()),
   ],
-  providers: [AuthService],
+  providers: [FirebaseService, AuthService],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
