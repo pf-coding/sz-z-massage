@@ -25,4 +25,11 @@ export class GoogleAnalyticsService {
     console.log('Logging event:', action, params);
     (window as any).gtag('event', action, params);
   }
+
+  public disableAnalytics() {
+    console.log('Disabling analytics...');
+    (window as any).gtag('consent', 'update', {
+      analytics_storage: 'denied',
+    });
+  }
 }

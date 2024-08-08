@@ -43,11 +43,13 @@
           }}
         </p>
         <p>
-          <a href="https://example.com/cookie-policy" target="_blank">{{
-            translationService.getTranslation(
-              "cookie_customization_Learn_more_about_cookie_policy"
-            )
-          }}</a>
+          <a href="https://example.com/cookie-policy" target="_blank">
+            {{
+              translationService.getTranslation(
+                "cookie_customization_Learn_more_about_cookie_policy"
+              )
+            }}
+          </a>
         </p>
 
         <!-- Strictly Necessary Cookies -->
@@ -124,6 +126,7 @@
               class="switch"
               id="functionalCheckbox"
               [checked]="cookieForm.get('functional')?.value"
+              (change)="onCheckboxChange('functional', $event)"
             />
             <label class="form-check-label" for="functionalCheckbox"> </label>
           </div>
@@ -169,6 +172,7 @@
               class="switch"
               id="statisticsCheckbox"
               [checked]="cookieForm.get('statistics')?.value"
+              (change)="onCheckboxChange('statistics', $event)"
             />
             <label class="form-check-label" for="statisticsCheckbox"> </label>
           </div>
@@ -214,6 +218,7 @@
               class="switch"
               id="marketingCheckbox"
               [checked]="cookieForm.get('marketing')?.value"
+              (change)="onCheckboxChange('marketing', $event)"
             />
             <label class="form-check-label" for="marketingCheckbox"> </label>
           </div>
@@ -225,7 +230,7 @@
           <p>
             {{
               translationService.getTranslation(
-                "cookie_customization_statistics_cookies_text"
+                "cookie_customization_marketing_cookies_text"
               )
             }}
           </p>

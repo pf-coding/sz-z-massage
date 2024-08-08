@@ -48,10 +48,6 @@ export class CookieCustomizationModalComponent implements OnInit {
   }
 
   ngOnInit() {
-    console.log(
-      'gtag function available:',
-      typeof (window as any).gtag === 'function'
-    );
     this.googleAnalyticsService.setDefaultConsent();
     if (this.cookies.statistics) {
       this.initializeAnalytics();
@@ -68,38 +64,46 @@ export class CookieCustomizationModalComponent implements OnInit {
     this.showDetails[category] = !this.showDetails[category];
   }
 
+  onCheckboxChange(category: CookieCategory, event: Event) {
+    const input = event.target as HTMLInputElement;
+    this.cookieForm.get(category)?.setValue(input.checked);
+  }
+
   savePreferences() {
     this.cookies = this.cookieForm.value;
     console.log('Cookie preferences saved:', this.cookies);
 
+    // Convert boolean to string ('true' or 'false')
+    const convertToString = (value: boolean) => (value ? 'true' : 'false');
+
     // Save cookies to the browser
     this.cookieService.setCookie(
       'necessary',
-      String(this.cookies.necessary),
+      convertToString(this.cookies.necessary),
       365
     );
     this.cookieService.setCookie(
       'functional',
-      String(this.cookies.functional),
+      convertToString(this.cookies.functional),
       365
     );
     this.cookieService.setCookie(
       'statistics',
-      String(this.cookies.statistics),
+      convertToString(this.cookies.statistics),
       365
     );
     this.cookieService.setCookie(
       'marketing',
-      String(this.cookies.marketing),
+      convertToString(this.cookies.marketing),
       365
     );
 
+    // Enable/Disable analytics based on user choice
     if (this.cookies.statistics) {
       this.initializeAnalytics();
+    } else {
+      this.googleAnalyticsService.disableAnalytics();
     }
-
-    this.updateConsentState();
-    this.closeModal();
   }
 
   loadPreferences() {
@@ -113,23 +117,5 @@ export class CookieCustomizationModalComponent implements OnInit {
       this.cookieService.getCookie('marketing') === 'true';
 
     this.cookieForm.patchValue(this.cookies);
-  }
-
-  private closeModal() {
-    const modal = document.querySelector('.modal') as HTMLElement;
-    if (modal) {
-      modal.style.display = 'none';
-    }
-  }
-
-  private updateConsentState() {
-    const consentState = {
-      ad_user_data: this.cookies.marketing ? 'granted' : 'denied',
-      ad_personalization: this.cookies.marketing ? 'granted' : 'denied',
-      ad_storage: this.cookies.marketing ? 'granted' : 'denied',
-      analytics_storage: this.cookies.statistics ? 'granted' : 'denied',
-    };
-
-    this.googleAnalyticsService.updateConsentState(consentState);
   }
 }
