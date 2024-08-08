@@ -48,6 +48,7 @@ export class CookieCustomizationModalComponent implements OnInit {
   }
 
   ngOnInit() {
+    this.googleAnalyticsService.setDefaultConsent();
     if (this.cookies.statistics) {
       this.initializeAnalytics();
     }
@@ -93,6 +94,7 @@ export class CookieCustomizationModalComponent implements OnInit {
       this.initializeAnalytics();
     }
 
+    this.updateConsentState();
     this.closeModal();
   }
 
@@ -114,5 +116,16 @@ export class CookieCustomizationModalComponent implements OnInit {
     if (modal) {
       modal.style.display = 'none';
     }
+  }
+
+  private updateConsentState() {
+    const consentState = {
+      ad_user_data: this.cookies.marketing ? 'granted' : 'denied',
+      ad_personalization: this.cookies.marketing ? 'granted' : 'denied',
+      ad_storage: this.cookies.marketing ? 'granted' : 'denied',
+      analytics_storage: this.cookies.statistics ? 'granted' : 'denied',
+    };
+
+    this.googleAnalyticsService.updateConsentState(consentState);
   }
 }

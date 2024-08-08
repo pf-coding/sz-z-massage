@@ -1,23 +1,25 @@
 import { Injectable } from '@angular/core';
-import { NavigationEnd, Router } from '@angular/router';
-
-declare let gtag: Function;
 
 @Injectable({
   providedIn: 'root',
 })
 export class GoogleAnalyticsService {
-  constructor(private router: Router) {
-    this.router.events.subscribe((event) => {
-      if (event instanceof NavigationEnd) {
-        gtag('config', 'G-77T9302X0V', {
-          page_path: event.urlAfterRedirects,
-        });
-      }
+  constructor() {}
+
+  public setDefaultConsent() {
+    (window as any).gtag('consent', 'default', {
+      ad_storage: 'denied',
+      ad_user_data: 'denied',
+      ad_personalization: 'denied',
+      analytics_storage: 'denied',
     });
   }
 
-  public event(eventName: string, params: { [key: string]: any }) {
-    gtag('event', eventName, params);
+  public updateConsentState(consentState: any) {
+    (window as any).gtag('consent', 'update', consentState);
+  }
+
+  public event(action: string, params: any) {
+    (window as any).gtag('event', action, params);
   }
 }
