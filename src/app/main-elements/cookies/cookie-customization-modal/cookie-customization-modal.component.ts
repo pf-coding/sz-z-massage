@@ -14,7 +14,6 @@ type CookieCategory = 'necessary' | 'functional' | 'statistics' | 'marketing';
 export class CookieCustomizationModalComponent implements OnInit {
   cookieForm: FormGroup;
 
-  // Initialize with default values
   cookies = {
     necessary: true,
     functional: false,
@@ -22,7 +21,6 @@ export class CookieCustomizationModalComponent implements OnInit {
     marketing: false,
   };
 
-  // Track visibility of details
   showDetails = {
     necessary: false,
     functional: false,
@@ -43,7 +41,6 @@ export class CookieCustomizationModalComponent implements OnInit {
       marketing: [this.cookies.marketing],
     });
 
-    // Load cookie preferences
     this.loadPreferences();
   }
 
@@ -73,10 +70,8 @@ export class CookieCustomizationModalComponent implements OnInit {
     this.cookies = this.cookieForm.value;
     console.log('Cookie preferences saved:', this.cookies);
 
-    // Convert boolean to string ('true' or 'false')
     const convertToString = (value: boolean) => (value ? 'true' : 'false');
 
-    // Save cookies to the browser
     this.cookieService.setCookie(
       'necessary',
       convertToString(this.cookies.necessary),
@@ -98,7 +93,6 @@ export class CookieCustomizationModalComponent implements OnInit {
       365
     );
 
-    // Enable/Disable analytics based on user choice
     if (this.cookies.statistics) {
       this.initializeAnalytics();
     } else {
