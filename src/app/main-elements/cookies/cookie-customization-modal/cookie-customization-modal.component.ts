@@ -48,6 +48,10 @@ export class CookieCustomizationModalComponent implements OnInit {
   }
 
   ngOnInit() {
+    console.log(
+      'gtag function available:',
+      typeof (window as any).gtag === 'function'
+    );
     this.googleAnalyticsService.setDefaultConsent();
     if (this.cookies.statistics) {
       this.initializeAnalytics();
