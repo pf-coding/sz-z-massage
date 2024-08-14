@@ -7,11 +7,11 @@
   >
     <div class="carousel-inner">
       <div
-        class="carousel-item"
+        class="carousel-item text-center"
         [ngClass]="{ active: i === 0 }"
         *ngFor="let image of images; let i = index"
       >
-        <img [src]="image" class="d-block w-100" alt="Slide {{ i }}" />
+        <img [src]="image" class="w-100" alt="Slide {{ i }}" />
       </div>
     </div>
     <button
