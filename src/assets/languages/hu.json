@@ -15,7 +15,7 @@
   "language_eng": "Angol",
   "language_de": "Német",
   "about_me_title_1": "KI VAGYOK ÉN?",
-  "about_me_title_2": "A tökéletes választás masszázs szakemberhez",
+  "about_me_title_2": "A legújabb masszőröd!",
   "about_me_text": "Mint tapasztalt masszőr, aki évek óta a szakmában dolgozik, elkötelezett vagyok a kiváló szolgáltatás nyújtása iránt, amely a Te egyedi igényeidhez igazodik. Terápiás megközelítésem a relaxáció elősegítésére, az izomfeszültség csökkentésére és az általános jólét javítására összpontosít. Különböző technikákat keverek, amelyek célzottan kezelik a konkrét problémákat, mint a stresszoldás, a fájdalomkezelés és a jobb mozgékonyság. Legyen szó nyugtató svédmasszázsról, élénkítő mélyszöveti masszázsról vagy fiatalító spa kezelésekről, elkötelezett vagyok abban, hogy professzionális és személyre szabott élményt nyújtsak, amely felfrissít és megújít.",
   "location_title": "Helyszín",
   "contact_information_title": "Professzionális Masszőr",
@@ -47,5 +47,15 @@
   "if_you_have_sedentary_lifestyle": "Ha keveset mozogsz a mindennapokban.",
   "if_you_are_active_in_sports_or_physical_work": "Ha sportolsz és nehéz fizikai munkát végzel.",
   "if_you_seek_physical_and_mental_refreshment": "Ha csupán testi és lelki felfrissülést keresel.",
-  "when_to_come": "Mikor látogass el hozzám?"
+  "when_to_come": "Mikor látogass el hozzám?",
+  "sign_up_to_newsletter_header": "Íratkozz fel hírlevelünkre!",
+  "sign_up_to_newsletter_lead": "Íratkozz fel hírlevelünkre és kapj 10% kedvezményt az első masszázs árából!",
+  "sign_up_to_newsletter_fullname": "Teljes név",
+  "sign_up_to_newsletter_fullname_error": "A név hossza minimum 5, maximum 10 karakter lehet",
+  "sign_up_to_newsletter_email": "E-mail cím",
+  "sign_up_to_newsletter_email_error": "Kérem, adjon meg egy érvényes e-mail címet.",
+  "sign_up_to_newsletter_privacy_policy": "Elfogadom az <a href='/privacy-policy' target='_blank'>adatkezelési tájékoztatót</a>.",
+  "sign_up_to_newsletter_privacy_policy_error": "Az adatkezelési tájékoztató elfogadása kötelező.",
+  "sign_up_to_newsletter_signup": "Feliratkozom!",
+  "sign_up_to_newsletter_no_thank_you": "Köszönöm, nem!"
 }

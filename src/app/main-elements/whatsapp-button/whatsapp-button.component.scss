@@ -1,0 +1,23 @@
+/* whatsapp-button.component.css */
+.whatsapp-button {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: #25d366; /* WhatsApp zöld */
+  color: white;
+  border-radius: 50%;
+  padding: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  cursor: pointer;
+  font-size: 24px;
+  z-index: 1000;
+}
+
+.whatsapp-button img {
+  width: 24px;
+  height: 24px;
+}

@@ -26,6 +26,8 @@ import { UsersComponent } from './main-elements/users/users.component';
 import { SignInComponent } from './main-elements/sign-in/sign-in.component';
 import { PageNotFoundComponent } from './main-elements/page-not-found/page-not-found.component';
 import { AuthService } from './services/auth-service.service';
+import { WhatsappButtonComponent } from './main-elements/whatsapp-button/whatsapp-button.component';
+
 
 @NgModule({
   declarations: [
@@ -45,6 +47,8 @@ import { AuthService } from './services/auth-service.service';
     UsersComponent,
     SignInComponent,
     PageNotFoundComponent,
+    WhatsappButtonComponent,
+
   ],
   imports: [
     BrowserModule,

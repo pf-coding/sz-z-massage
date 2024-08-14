@@ -1,55 +1,40 @@
+.decor-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw; /* Teljes szélesség a viewport szélességéhez */
+  height: 100vh; /* Teljes magasság a viewport magasságához */
+  display: flex;
+  justify-content: space-between; /* Terjeszti a gyerekeket a bal és jobb oldalra */
+  pointer-events: none; /* Elkerüli, hogy az elem kattintható legyen */
+  z-index: 1; /* Az elem rétegsorrendje, hogy a tartalom fölött legyen */
+}
+
 .left-decor,
 .right-decor {
-  position: fixed;
-  top: -12px;
-  width: 400px;
-  height: 400px;
-  background-size: contain;
-  background-repeat: no-repeat;
-  z-index: 1000;
-  transform-origin: center center; /* Módosítás: Forgatás középpontja a kép középpontja */
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 540px; /* Kép szélessége */
+  height: 100%; /* Kitölti a teljes magasságot */
+  background-size: cover; /* Kitölti a rendelkezésre álló helyet a képarány megőrzésével */
+  background-repeat: repeat;
 }
 
 .left-decor {
-  left: -6px;
-  background-image: url("/assets/palm-left.png");
-  animation: sway-left 3s infinite ease-in-out;
+  left: -100px; /* Bal oldal */
+  background-image: url("/assets/bambooleft.png");
 }
 
 .right-decor {
-  right: -6px;
-  background-image: url("/assets/palm-right.png");
-  animation: sway-right 4s infinite ease-in-out;
+  right: -100px; /* Jobb oldal */
+  background-image: url("/assets/bambooright.png");
 }
 
-@keyframes sway-left {
-  0% {
-    transform: rotate(0deg);
-  }
-  50% {
-    transform: rotate(-2deg);
-  }
-  100% {
-    transform: rotate(0deg);
-  }
-}
-
-@keyframes sway-right {
-  0% {
-    transform: rotate(0deg);
-  }
-  50% {
-    transform: rotate(2deg); /* Módosítás: forgatás irányának megváltoztatása */
-  }
-  100% {
-    transform: rotate(0deg);
-  }
-}
-
-@media (max-width: 600px) {
+/* Tablet nézet - 1024px szélesség alatt */
+@media (max-width: 1024px) {
   .left-decor,
   .right-decor {
-    width: 170px;
-    height: 170px;
+    display: none; /* Elrejti a dekor elemeket tablet nézettől kezdve */
   }
 }

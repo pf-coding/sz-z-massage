@@ -16,6 +16,7 @@ import { Subscription } from 'rxjs';
 import { UserModel } from 'src/app/models/user.model';
 import { UserService } from 'src/app/services/user.service';
 import { AuthService } from 'src/app/services/auth-service.service';
+import { TranslationService } from '@app/services/translation.service';
 
 @Component({
   selector: 'app-reg-form',
@@ -30,6 +31,7 @@ export class RegFormComponent implements OnInit, OnDestroy {
   subRoute?: Subscription;
   isLoggedIn: boolean | null = null;
   private authSubscription: Subscription | null = null;
+  privacyPolicyText!: string;
 
   @Output() closeModal: EventEmitter<void> = new EventEmitter<void>();
 
@@ -148,7 +150,8 @@ export class RegFormComponent implements OnInit, OnDestroy {
     private userService: UserService,
     private router: Router,
     private activatedRoute: ActivatedRoute,
-    private authService: AuthService
+    private authService: AuthService,
+    public translationService: TranslationService
   ) {}
 
   ngOnInit(): void {
@@ -162,6 +165,7 @@ export class RegFormComponent implements OnInit, OnDestroy {
         Validators.required,
         Validators.pattern(/^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/),
       ]),
+      dataConsent: new FormControl(false, [Validators.requiredTrue]),
     });
 
     // AuthService subscription az bejelentkezett állapot figyelésére
@@ -194,6 +198,10 @@ export class RegFormComponent implements OnInit, OnDestroy {
         });
       }
     });
+
+    this.privacyPolicyText = this.translationService.getTranslation(
+      'sign_up_to_newsletter_privacy_policy'
+    );
   }
   close() {
     const modal = document.querySelector('.modal');
@@ -203,6 +211,10 @@ export class RegFormComponent implements OnInit, OnDestroy {
       modal.classList.add('hide');
       this.closeModal.emit();
     }
+  }
+
+  changeLanguage(lang: string): void {
+    this.translationService.setLang(lang);
   }
 
   ngOnDestroy(): void {

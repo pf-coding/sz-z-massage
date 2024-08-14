@@ -47,5 +47,15 @@
   "if_you_have_sedentary_lifestyle": "If you lead a sedentary lifestyle and lack physical activity.",
   "if_you_are_active_in_sports_or_physical_work": "If you are active in sports or engage in physically demanding work.",
   "if_you_seek_physical_and_mental_refreshment": "If you are simply seeking physical and mental refreshment.",
-  "when_to_come": "When to visit me?"
+  "when_to_come": "When to visit me?",
+  "sign_up_to_newsletter_header": "Sign up for our newsletter!",
+  "sign_up_to_newsletter_lead": "Sign up for our newsletter and receive 10% off your first massage!",
+  "sign_up_to_newsletter_fullname": "Full Name",
+  "sign_up_to_newsletter_fullname_error": "The name must be at least 5 characters and no more than 10 characters long.",
+  "sign_up_to_newsletter_email": "Email Address",
+  "sign_up_to_newsletter_email_error": "Please provide a valid email address.",
+  "sign_up_to_newsletter_privacy_policy": "I accept the <a href='/privacy-policy' target='_blank'>privacy policy</a>.",
+  "sign_up_to_newsletter_privacy_policy_error": "Acceptance of the privacy policy is required.",
+  "sign_up_to_newsletter_signup": "Sign Up!",
+  "sign_up_to_newsletter_no_thank_you": "No, thank you!"
 }

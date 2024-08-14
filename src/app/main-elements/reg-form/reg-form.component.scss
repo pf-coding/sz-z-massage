@@ -1,3 +1,38 @@
+@import "src/styles.scss";
+
+.modal.fade.show {
+  display: block;
+  animation: fadeIn 0.5s forwards;
+}
+
+.modal.fade.hide {
+  animation: fadeOut 0.5s forwards;
+  display: none; // Ensure the modal is hidden after the animation
+}
+
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+/* SVG stílusok */
+.svg-wrapper {
+  width: 100%;
+  text-align: center;
+}
+
+.svg-wrapper svg {
+  max-width: 100%;
+  height: auto;
+}
+
+.btn {
+  background-color: $primary-color;
+  color: $secondary-color;
+}
+
 @keyframes fadeIn {
   from {
     opacity: 0;
@@ -14,14 +49,4 @@
   to {
     opacity: 0;
   }
-}
-
-.modal.fade.show {
-  display: block;
-  animation: fadeIn 0.5s forwards;
-}
-
-.modal.fade.hide {
-  animation: fadeOut 0.5s forwards;
-  display: none; // Ensure the modal is hidden after the animation
 }
