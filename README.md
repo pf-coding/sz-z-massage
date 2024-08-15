@@ -1,186 +1,27 @@
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.2.10.
+# SzZMassage
 
-# RelaxZ Massage Service Website
+This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.2.14.
 
-## 1. Project Overview
+## Development server
 
-This Angular-based website showcases the massage services provided by Zoltán Szabó, branded as RelaxZ. The goal is to create a clean and user-friendly interface that allows visitors to learn about the services, view prices, and easily book appointments. The site supports multiple languages and is designed to be mobile-friendly.
+Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
 
-## 2. Technologies
+## Code scaffolding
 
-The project uses the following technologies and tools:
+Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
 
-- **Angular**: Frontend framework for web development.
-- **Bootstrap**: CSS framework for responsive design.
-- **SCSS**: Stylesheet language for modular and maintainable CSS.
-- **Firebase**: For user authentication and database management.
-- **Mailchimp API**: For managing newsletter subscriptions.
-- **Google Maps API**: To display the location of the service on a map.
-- **FontAwesome**: For icons used in navigation and contact information.
+## Build
 
-## 3. Installation
+Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
 
-To run the application, follow these steps:
+## Running unit tests
 
-1. **Clone the Project:** Clone the project from the GitHub repository and navigate to the project directory.
+Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
 
-   ```bash
-   git clone https://github.com/pf-coding/sz-z-massage.git
-   cd relaxz
-   ```
+## Running end-to-end tests
 
-2. **Install Dependencies:** Install the necessary dependencies.
+Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
 
-   ```bash
-   npm install
-   ```
+## Further help
 
-3. **Start the Development Server:** Start the development server and open the browser at `http://localhost:4200`.
-   ```bash
-   npm start
-   ```
-
-## 4. Features and Structure
-
-### 4.1. Dependencies
-
-- **@angular/animations**: ^15.2.9
-- **@angular/common**: ^15.2.9
-- **@angular/compiler**: ^15.2.9
-- **@angular/core**: ^15.2.10
-- **@angular/fire**: ^7.6.1
-- **@angular/forms**: ^15.2.9
-- **@angular/platform-browser**: ^15.2.9
-- **@angular/platform-browser-dynamic**: ^15.2.9
-- **@angular/router**: ^15.2.9
-- **@fortawesome/angular-fontawesome**: ^0.12.0
-- **@fortawesome/fontawesome-svg-core**: ^6.6.0
-- **@fortawesome/free-brands-svg-icons**: ^6.6.0
-- **@fortawesome/free-solid-svg-icons**: ^6.6.0
-- **bootstrap**: ^5.1.3
-- **cors**: ^2.8.5
-- **dotenv**: ^16.4.5
-- **express**: ^4.19.2
-- **file-saver**: ^2.0.5
-- **firebase**: ^9.23.0
-- **firebase-admin**: ^12.2.0
-- **gsap**: ^3.12.5
-- **ngx-toastr**: ^16.0.0
-- **rxfire**: ^6.0.3
-- **rxjs**: ~7.8.1
-- **tslib**: ^2.3.0
-- **xlsx**: ^0.18.5
-- **zone.js**: ~0.11.4
-
-### 4.2. Development Dependencies
-
-- **@angular-devkit/build-angular**: ^15.2.9
-- **@angular/cli**: ^15.2.9
-- **@angular/compiler-cli**: ^15.2.9
-- **@types/file-saver**: ^2.0.7
-- **@types/jasmine**: ~3.8.0
-- **@types/node**: ^15.14.9
-- **jasmine-core**: ~3.8.0
-- **karma**: ~6.4.2
-- **karma-chrome-launcher**: ~3.1.0
-- **karma-coverage**: ~2.0.3
-- **karma-jasmine**: ~4.0.0
-- **karma-jasmine-html-reporter**: ~1.7.0
-- **typescript**: ^4.9.5
-
-### 4.3. Home Page and Navigation Bar
-
-On the home page, visitors can choose from the following menu items via the navigation bar:
-
-- **About Me**: A brief introduction to Zoltán Szabó.
-- **Massage Types**: Available massage types and their detailed descriptions.
-- **Location**: The precise location of the service with Google Maps integration.
-- **Contact**: Contact information (email, Facebook, Instagram, phone).
-- **Language**: Change the language of the site (Hungarian, English, German).
-
-### Features
-
-- **Home Page**: Navigation bar with the following menu items: About Me, Massage Types, Location, Contact, Language.
-- **About Me**: Brief introduction to Zoltán Szabó.
-- **Massage Types**: Cards displaying different massage services, with a new component showing prices and duration.
-- **Booking**: Ability to book appointments on the external Setmore site.
-- **Contact**: Contact information including email, Facebook, Instagram, and phone, along with a Google Maps iframe.
-- **Cookie Settings**: Modal for modifying cookie settings, integrated with Google Analytics.
-- **Admin Panel**: Login option, managing administrators, handling newsletter subscriptions, and exporting data in Excel format.
-- **Newsletter**: Automatic registration to Mailchimp and sending a coupon code for new subscribers.
-- **Language Selection**: Language selection in the navbar, dynamically loading the JSON file for the selected language.
-- **Carousel**: Automatic image rotation in the carousel.
-- **WhatsApp Button**: Fixed position button that allows direct messaging Zoltán via WhatsApp.
-
-### 4.4. About Me Section
-
-This section introduces Zoltán Szabó and the RelaxZ brand. It details why it's worth using the services and what issues can be addressed.
-
-### 4.5. Massage Types
-
-The site showcases available massage services in card format, which can be paginated. Each card includes a brief description and an "Prices and Booking" button that navigates to the booking section with a new component.
-
-### 4.6. Prices and Booking Component
-
-Clicking the "Prices and Booking" button directs the user to a new component where they can select the massage duration. Prices are displayed in HUF for Hungarian, and EUR for English and German. Clicking the booking button takes the user to the Setmore booking page, showing available slots for the selected service and duration.
-
-### 4.7. Contact and Location
-
-The contact section includes contact information and a Google Maps iframe showing the service location. The contact details include an email address, Facebook, Instagram profiles, and a phone number, each with a dedicated button.
-
-### 4.8. Administration Panel
-
-At the bottom of the page is an admin login button, which opens an authentication modal. Logged-in admins can manage newsletter subscribers (delete, update data), register new admins, and view the current list of admins. This is tightly integrated with the associated Firebase collection.
-
-### 4.9. Cookie Management
-
-The footer includes cookie settings in a modal window, providing detailed information about different cookies. Users can reject non-essential cookies as well.
-
-### 4.10. Newsletter Subscription
-
-The newsletter subscription occurs in a timed modal window, which appears 8 seconds after entering the site. If dismissed, it reappears after 1 minute, then again after 15 minutes. The form remains disabled until the name, email, and privacy policy acceptance are correctly filled out.
-
-### 4.11. Other Features
-
-- **Carousel**: The carousel at the top of the home page changes images every 3 seconds unless the mouse is over the carousel.
-- **Language Selector**: The language selector in the navigation bar allows changing the site language, loading the appropriate JSON file for the selected language.
-- **WhatsApp Button**: A fixed WhatsApp button in the bottom right corner allows direct messaging with Zoltán via WhatsApp.
-
-## 5. Styling and Design
-
-The project’s styling consists of the following elements:
-
-- **Font**: The [`Quicksand`](https://fonts.google.com/specimen/Quicksand) font is used globally.
-
-- **Color Palette**:
-  ```bash
-  - primary color: #3e4f3c
-  - secondary color: #ecaa93
-  - tertiary color: wheat
-  ```
-- **Global Style**: The `style.scss` file contains global styles, which are imported into each component’s scss file.
-
-## 6. Development and Expansion
-
-The project can be developed further by adding additional features and sections. Here are a few suggestions:
-
-- **Additional Language Support**: Adding more languages to the site.
-- **Blog Section**: A new blog section where Zoltán can share the benefits of massage and tips.
-
-## 7. Known Issues and Limitations
-
-Here are some current known issues or limitations:
-
-- **Browser Compatibility**: Some site features may not be fully supported in older browsers.
-
-## 8. Contact
-
-If you would like to contribute to the project or have any questions, please contact us at: [zoltan.massages@gmail.com](mailto:zoltan.massages@gmail.com).
-
-## 9. License
-
-This project is open-source and licensed under the [MIT License](LICENSE).
-
-## 10. Project Status
-
-The project is currently under active maintenance. We have future development plans and welcome suggestions!
+To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
