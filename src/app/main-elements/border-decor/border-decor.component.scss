@@ -2,12 +2,12 @@
   position: fixed;
   top: 0;
   left: 0;
-  width: 100vw; /* Teljes szélesség a viewport szélességéhez */
-  height: 100vh; /* Teljes magasság a viewport magasságához */
+  width: 100vw;
+  height: 100vh; 
   display: flex;
-  justify-content: space-between; /* Terjeszti a gyerekeket a bal és jobb oldalra */
-  pointer-events: none; /* Elkerüli, hogy az elem kattintható legyen */
-  z-index: 1; /* Az elem rétegsorrendje, hogy a tartalom fölött legyen */
+  justify-content: space-between;
+  pointer-events: none; 
+  z-index: 1; 
 }
 
 .left-decor,
@@ -15,26 +15,25 @@
   position: absolute;
   top: 0;
   bottom: 0;
-  width: 540px; /* Kép szélessége */
-  height: 100%; /* Kitölti a teljes magasságot */
-  background-size: cover; /* Kitölti a rendelkezésre álló helyet a képarány megőrzésével */
+  width: 540px;
+  height: 100%; 
+  background-size: cover;
   background-repeat: repeat;
 }
 
 .left-decor {
-  left: -100px; /* Bal oldal */
+  left: -100px; 
   background-image: url("/assets/bambooleft.png");
 }
 
 .right-decor {
-  right: -100px; /* Jobb oldal */
+  right: -100px; 
   background-image: url("/assets/bambooright.png");
 }
 
-/* Tablet nézet - 1024px szélesség alatt */
 @media (max-width: 1024px) {
   .left-decor,
   .right-decor {
-    display: none; /* Elrejti a dekor elemeket tablet nézettől kezdve */
+    display: none; 
   }
 }

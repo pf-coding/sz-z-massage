@@ -10,6 +10,6 @@ export interface UserModel {
   hour?: number;
   minute?: number;
   second?: number;
-  dataConsent: boolean; // Új mező az adatkezelési tájékoztatóhoz
+  dataConsent: boolean;
   [key: string]: any;
 }

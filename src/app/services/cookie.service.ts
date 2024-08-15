@@ -33,6 +33,5 @@ export class CookieService {
   auditCookies() {
     const cookies = this.getCookies();
     console.log('Azonosított cookie-k:', cookies);
-    // Itt végezheted el a szükséges teendőket
   }
 }

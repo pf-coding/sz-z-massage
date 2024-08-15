@@ -44,7 +44,7 @@ export class RegFormComponent implements OnInit, OnDestroy {
   }
 
   submitUserForm() {
-    console.log('Form submitted'); // Debugging purpose
+    console.log('Form submitted');
     if (!this.userForm.invalid) {
       const newUser: UserModel = this.userForm.value;
 
@@ -55,19 +55,17 @@ export class RegFormComponent implements OnInit, OnDestroy {
           return;
         }
 
-        // Use existing timestamp if available
         this.userService.getUsersWithGetDoc().subscribe({
           next: (users: UserModel[]) => {
             const existingUser = users.find((u) => u.id === this.id);
             if (existingUser) {
-              // Preserve the existing timestamp
               newUser.timestamp = existingUser.timestamp;
               newUser.id = this.id;
 
               this.userService.updateUser(newUser).subscribe({
                 complete: () => {
                   this.router.navigate(['users']);
-                  this.closeModal.emit(); // Emit close event after update
+                  this.closeModal.emit();
                 },
                 error: (err) => {
                   console.error('Error updating user:', err);
@@ -86,7 +84,6 @@ export class RegFormComponent implements OnInit, OnDestroy {
           },
         });
       } else {
-        // Create operation
         this.userService.getUsersWithGetDoc().subscribe({
           next: (users: UserModel[]) => {
             const userWithEmail = users.find((u) => u.email === newUser.email);
@@ -100,7 +97,7 @@ export class RegFormComponent implements OnInit, OnDestroy {
                 next: (docRef) => {
                   console.log('User saved with ID: ', docRef['id']);
                   this.userForm.reset();
-                  this.closeModal.emit(); // Emit close event after add
+                  this.closeModal.emit();
                 },
                 error: (err) => {
                   console.error('Error adding user:', err);
@@ -136,7 +133,7 @@ export class RegFormComponent implements OnInit, OnDestroy {
       this.userService.deleteUser(id).subscribe({
         complete: () => {
           this.router.navigate(['users']);
-          this.closeModal.emit(); // Emit close event after delete
+          this.closeModal.emit();
         },
         error: (err) => {
           console.error('Error deleting user:', err);
@@ -180,13 +177,12 @@ export class RegFormComponent implements OnInit, OnDestroy {
       if (readParam) {
         this.id = readParam;
 
-        // Használja a getUsersWithGetDoc metódust
         this.subUser = this.userService.getUsersWithGetDoc().subscribe({
           next: (users: UserModel[]) => {
             const user = users.find((u) => u.id === this.id);
             if (user) {
               this.user = user;
-              console.log('Fetched user:', this.user); // Debugging célra
+              console.log('Fetched user:', this.user);
               this.userForm.patchValue(user);
             } else {
               console.error(`User with ID ${this.id} not found`);

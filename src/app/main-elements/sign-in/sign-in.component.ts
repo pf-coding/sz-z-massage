@@ -44,9 +44,4 @@ export class SignInComponent {
   // public loginWithGoogle() {
   //   this.authService.loginWithGoogle();
   // }
-
-  // YETILOGIN
-
-
-  
 }

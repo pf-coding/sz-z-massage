@@ -33,18 +33,16 @@
 }
 
 app-massage-styles {
-  transition: opacity 1s ease-in; /* Áttűnési effektus beállítása */
-  transition: opacity 0.5s ease-out; /* Áttűnési effektus beállítása */
-  opacity: 1; /* Alapértelmezett látható állapot */
+  transition: opacity 1s ease-in;
+  transition: opacity 0.5s ease-out;
+  opacity: 1;
 }
 
-/* Az ng-container fade in effektje */
 ng-container {
-  transition: opacity 0.5s ease-in; /* Áttűnési effektus beállítása */
-  opacity: 0; /* Kezdetben átlátszó állapot */
+  transition: opacity 0.5s ease-in;
+  opacity: 0;
 }
 
-/* Ha az ng-container visible osztállyal rendelkezik (fade in), akkor láthatóvá válik */
 ng-container.visible {
-  opacity: 1; /* Látható állapot */
+  opacity: 1;
 }

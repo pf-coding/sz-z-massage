@@ -15,15 +15,15 @@
 
 @media screen and (max-width: 991.98px) {
   .navbar-toggler {
-    top: 10px; /* Gombok eltolása a felső margón belül */
+    top: 10px;
   }
 
   .navbar-collapse {
     position: absolute;
-    top: 100%; /* Menü elhelyezése a gomb alatt */
+    top: 100%;
     left: 0;
     right: 0;
-    background-color: $primary-color; /* Menü háttérszínének beállítása */
-    text-align: center; /* Tartalmak középre igazítása */
+    background-color: $primary-color;
+    text-align: center;
   }
 }

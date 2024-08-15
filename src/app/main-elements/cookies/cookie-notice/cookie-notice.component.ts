@@ -65,7 +65,6 @@ export class CookieNoticeComponent implements OnInit {
         analytics_storage: 'granted',
       });
     } else {
-      // Clear cookies except for "necessary"
       this.cookieService.deleteCookie('functional');
       this.cookieService.deleteCookie('statistics');
       this.cookieService.deleteCookie('marketing');

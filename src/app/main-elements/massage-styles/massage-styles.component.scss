@@ -3,7 +3,6 @@
   justify-content: center;
 }
 
-
 @keyframes rotation {
   0% {
     transform: rotate(0deg);
@@ -16,7 +15,7 @@
 .btn-booking {
   position: relative;
   cursor: pointer;
-  margin: 10px 15px; // Csökkentett margó a jobb reszponzivitás érdekében
+  margin: 10px 15px;
   font-weight: 400;
   font-style: normal;
   letter-spacing: 1px;
@@ -25,7 +24,7 @@
   background: $secondary-color;
   color: $primary-color;
   text-transform: uppercase;
-  transition: all 0.3s; // Áttűnési hatás a hover állapothoz
+  transition: all 0.3s;
   text-align: center;
 
   &:before {
@@ -59,7 +58,6 @@
   }
 }
 
-// További stílusok a reszponzivitás biztosításához
 @media (max-width: 768px) {
   .btn-booking {
     padding: 12px 24px;
@@ -80,19 +78,19 @@
   .card {
     cursor: pointer;
 
-    opacity: 0; // Kezdetben nem látható
-    width: 90%; // Csökkentett szélesség
-    height: 100%; // Egységes magasság
+    opacity: 0;
+    width: 90%;
+    height: 100%;
     transition: opacity 0.5s ease, transform 0.3s ease-in-out,
       box-shadow 0.3s ease-in-out;
 
     @keyframes showCard {
       to {
-        opacity: 1; // A 0.3 másodperc elteltével az elem megjelenik
+        opacity: 1;
       }
     }
 
-    animation: showCard 0.3s 0.3s forwards; // Animáció alkalmazása
+    animation: showCard 0.3s 0.3s forwards;
 
     &:hover {
       transform: translateY(-10px);
@@ -109,7 +107,7 @@
       img {
         transition: filter 0.3s ease-in-out;
         border-radius: 2%;
-        @include hover-filter(1); // Alapértelmezett fényerő és hover hatás
+        @include hover-filter(1);
       }
 
       h3 {
@@ -139,14 +137,14 @@
   }
 
   .custom-card {
-    border: 2px solid $secondary-color; /* Szürke színű, vastagabb keret */
-    border-radius: 10px; /* Lekerekített sarkok */
+    border: 2px solid $secondary-color;
+    border-radius: 10px;
   }
 
   .custom-link {
-    color: $secondary-color; /* Szürke színű link */
+    color: $secondary-color;
     &:hover {
-      color: $secondary-color; /* Sötétebb szürke hover esetén */
+      color: $secondary-color;
     }
   }
 }

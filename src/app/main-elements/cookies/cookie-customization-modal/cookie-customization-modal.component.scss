@@ -1,35 +1,35 @@
 @import "src/styles.scss";
 
 .modal-content {
-  background-color: #f8f9fa; /* Háttérszín */
-  border-radius: 10px; /* Lekerekített sarkok */
-  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1); /* Árnyék */
+  background-color: #f8f9fa; 
+  border-radius: 10px; 
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
 }
 
 .modal-header {
-  border-bottom: none; /* Fejléc alsó határvonala eltávolítása */
+  border-bottom: none;
 }
 
 .modal-title {
-  color: #343a40; /* Fejléc színe */
+  color: #343a40; 
 }
 
 .modal-body {
-  color: #6c757d; /* Szöveg színe */
+  color: #6c757d;
 }
 
 .modal-footer {
-  border-top: none; /* Lábléc felső határvonala eltávolítása */
+  border-top: none; 
 }
 
 .form-check-input {
-  margin-top: 0.2rem; /* Checkbox-ok margója */
+  margin-top: 0.2rem; 
 }
 
 .cookie-description {
-  margin-top: 0.2rem; /* Cookie leírás margója */
-  color: #6c757d; /* Cookie leírás szöveg színe */
-  font-size: 0.875rem; /* Cookie leírás betűméret */
+  margin-top: 0.2rem; 
+  color: #6c757d; 
+  font-size: 0.875rem; 
 }
 
 .switch {
@@ -42,7 +42,7 @@
   vertical-align: middle;
   margin-bottom: 0;
   cursor: pointer;
-  padding-left: 40px; /* Növelt padding bal oldalt */
+  padding-left: 40px;
 }
 
 .switch + .form-check-label::before,
@@ -56,16 +56,16 @@
 }
 
 .switch + .form-check-label::before {
-  width: 36px; /* Növelt szélesség */
-  height: 20px; /* Növelt magasság */
+  width: 36px;
+  height: 20px;
   background-color: #ccc;
-  border-radius: 10px; /* Növelt border-radius */
+  border-radius: 10px;
   transition: background-color 0.3s;
 }
 
 .switch + .form-check-label::after {
-  width: 14px; /* Növelt átmérő */
-  height: 14px; /* Növelt átmérő */
+  width: 14px;
+  height: 14px;
   background-color: #fff;
   border-radius: 50%;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.4);
@@ -77,24 +77,23 @@
 }
 
 .switch:checked + .form-check-label::after {
-  left: 18px; /* Mozgatott pozíció */
+  left: 18px;
 }
 
-// Szükséges sütik betűmérete és formázása
 .text-start {
-  text-align: left !important; /* Balra zárt szöveg */
-  font-size: 1.3rem; /* Nagyobb betűméret */
-  font-weight: bold; /* Félkövér betűtípus */
+  text-align: left !important;
+  font-size: 1.3rem;
+  font-weight: bold;
 }
 
 .text-description {
-  text-align: justify !important; /* Balra zárt szöveg */
-  font-size: 1rem; /* Nagyobb betűméret */
+  text-align: justify !important;
+  font-size: 1rem;
 }
 
 .text-start-other {
-  text-align: left !important; /* Balra zárt szöveg */
-  font-size: 1rem; /* kisebb betűméret */
+  text-align: left !important;
+  font-size: 1rem;
 }
 
 .cookie-notice button {

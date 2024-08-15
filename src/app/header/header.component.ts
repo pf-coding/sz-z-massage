@@ -64,7 +64,7 @@ export class HeaderComponent implements OnInit {
 
     if (navbarCollapse && !navbarCollapse.contains(event.target as Node)) {
       if (languageSwitcher && languageSwitcher.contains(event.target as Node)) {
-        return; // Ha a nyelvválasztó elemre kattintunk, akkor ne záródjon be
+        return;
       }
 
       const bsCollapse = new (window as any).bootstrap.Collapse(

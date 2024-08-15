@@ -12,9 +12,9 @@ import { TranslationService } from '../../services/translation.service';
 export class MassagePagesComponent implements OnInit {
   selectedMassagePage: MassagePage | null = null;
   isMassagePageActive: boolean = false;
-  selectedPrice: string = ''; // új változó az árak kezelésére
-  selectedDuration: string = ''; // új változó a kiválasztott időtartam kezelésére
-  bookingLink: string = ''; // új változó a foglalási link kezelésére
+  selectedPrice: string = '';
+  selectedDuration: string = '';
+  bookingLink: string = '';
 
   constructor(
     private route: ActivatedRoute,
@@ -31,7 +31,7 @@ export class MassagePagesComponent implements OnInit {
         if (pageName) {
           this.fetchMassagePage(pageName, lang);
         } else {
-          this.selectedMassagePage = null; // Alapértelmezett érték beállítása
+          this.selectedMassagePage = null;
         }
       });
     });
@@ -49,10 +49,10 @@ export class MassagePagesComponent implements OnInit {
       (data) => {
         this.selectedMassagePage =
           data.find((page) => page.title === pageName) || null;
-        this.selectedPrice = this.selectedMassagePage?.price30min || ''; // Alapértelmezett ár beállítása
-        this.selectedDuration = '30min'; // Alapértelmezett időtartam beállítása
-        this.updateBookingLink(); // Alapértelmezett foglalási link beállítása
-        this.isMassagePageActive = true; // Oldal aktívvá tétele
+        this.selectedPrice = this.selectedMassagePage?.price30min || '';
+        this.selectedDuration = '30min';
+        this.updateBookingLink();
+        this.isMassagePageActive = true;
       },
       (error) => {
         console.error(
@@ -72,8 +72,8 @@ export class MassagePagesComponent implements OnInit {
       } else if (duration === '1.5hr') {
         this.selectedPrice = this.selectedMassagePage.price15hr;
       }
-      this.selectedDuration = duration; // Kiválasztott időtartam frissítése
-      this.updateBookingLink(); // Foglalási link frissítése
+      this.selectedDuration = duration;
+      this.updateBookingLink();
     }
   }
 
@@ -90,7 +90,7 @@ export class MassagePagesComponent implements OnInit {
   }
 
   navigateBack(): void {
-    this.isMassagePageActive = false; // Oldal inaktívvá tétele
+    this.isMassagePageActive = false;
     this.router.navigate(['/']).then(() => {
       window.location.hash = '#masszazs-tipusok';
     });

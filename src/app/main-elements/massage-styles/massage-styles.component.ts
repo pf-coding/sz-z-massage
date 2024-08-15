@@ -80,7 +80,7 @@ export class MassageStylesComponent implements OnInit, OnDestroy {
       setTimeout(() => {
         this.currentIndex -= this.cardsPerPage;
         this.fadeInCards();
-        this.isAnimating = false; // Animáció befejeződött
+        this.isAnimating = false;
       }, 500);
     }
   }
@@ -95,7 +95,7 @@ export class MassageStylesComponent implements OnInit, OnDestroy {
       setTimeout(() => {
         this.currentIndex += this.cardsPerPage;
         this.fadeInCards();
-        this.isAnimating = false; // Animáció befejeződött
+        this.isAnimating = false;
       }, 500);
     }
   }
@@ -141,7 +141,6 @@ export class MassageStylesComponent implements OnInit, OnDestroy {
     const deltaX = this.touchEndX - this.touchStartX;
     const deltaY = this.touchEndY - this.touchStartY;
     if (Math.abs(deltaX) > Math.abs(deltaY)) {
-      // Only consider horizontal swipes
       if (deltaX < 0) {
         this.next();
       } else if (deltaX > 0) {
