@@ -188,7 +188,6 @@ The project is currently under active maintenance. We have future development pl
 ## 11. Screenshots
 
 ![Képernyőkép 2024-08-15 114308](https://github.com/user-attachments/assets/9ca8d5fc-ca1d-478c-b646-2d33040eaf36)
-![Képernyőkép 2024-08-15 114301](https://github.com/user-attachments/assets/a2396ad3-6865-408d-80b2-90cef3821b95)
 ![Képernyőkép 2024-08-15 114247](https://github.com/user-attachments/assets/a74a2b44-b092-4311-b0ad-c2b1726b81d3)
 ![Képernyőkép 2024-08-15 114222](https://github.com/user-attachments/assets/ee920481-e070-4e3a-83b8-bede8755df06)
 ![Képernyőkép 2024-08-15 114200](https://github.com/user-attachments/assets/bf6dd2ef-5840-4b79-a7bf-daacdf34b275)
