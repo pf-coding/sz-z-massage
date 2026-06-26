@@ -1,0 +1,39 @@
+.decor-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh; 
+  display: flex;
+  justify-content: space-between;
+  pointer-events: none; 
+  z-index: 1; 
+}
+
+.left-decor,
+.right-decor {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 540px;
+  height: 100%; 
+  background-size: cover;
+  background-repeat: repeat;
+}
+
+.left-decor {
+  left: -100px; 
+  background-image: url("/assets/bambooleft.png");
+}
+
+.right-decor {
+  right: -100px; 
+  background-image: url("/assets/bambooright.png");
+}
+
+@media (max-width: 1024px) {
+  .left-decor,
+  .right-decor {
+    display: none; 
+  }
+}
