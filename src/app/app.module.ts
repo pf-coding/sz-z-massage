@@ -14,7 +14,6 @@ import { MassagePagesComponent } from './main-elements/massage-pages/massage-pag
 import { CookieNoticeComponent } from './main-elements/cookies/cookie-notice/cookie-notice.component';
 import { CookieCustomizationModalComponent } from './main-elements/cookies/cookie-customization-modal/cookie-customization-modal.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
-import { BorderDecorComponent } from './main-elements/border-decor/border-decor.component';
 import { environment } from 'src/environments/environment';
 import { RegFormComponent } from './main-elements/reg-form/reg-form.component';
 import { RouterModule } from '@angular/router';
@@ -41,7 +40,6 @@ import { WhatsappButtonComponent } from './main-elements/whatsapp-button/whatsap
     MassagePagesComponent,
     CookieNoticeComponent,
     CookieCustomizationModalComponent,
-    BorderDecorComponent,
     RegFormComponent,
     UserListComponent,
     UsersComponent,
